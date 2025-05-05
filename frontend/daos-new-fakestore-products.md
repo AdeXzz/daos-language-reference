@@ -277,6 +277,35 @@ export interface WantedResource {
   poster_classification: string;
 }
 ```
+revisar segun el json completo
+```
+export interface UserResponse {
+  items: UserResource[];
+}
+export interface UserResource {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  address: {
+    street: string;
+    suite: string;
+    city: string;
+    zipcode: string;
+    geo: {
+      lat: string;
+      lng: string;
+    }
+  },
+  phone: string;
+  website: string;
+  company: {
+    name: string;
+    catchPhrase: string;
+    bs: string;
+  }
+}
+```
 **16** Agregar code en wanted.assembler:
 ```
 import {WantedResource, WantedResponse} from './wanted.response';
@@ -313,6 +342,40 @@ export class Wanted {
   ) { }
 }
 ```
+```
+export class Address {
+  constructor(
+    public street: string,
+    public suite: string,
+    public city: string,
+    public zipcode: string,
+    public geo: {
+      lat: string;
+      lng: string;
+    }
+  ) {
+  }
+}
+
+import { Address } from './address.entity';
+
+export class User {
+  constructor(
+    public id: number,
+    public name: string,
+    public username: string,
+    public email: string,
+    public address: Address,
+    public phone: string,
+    public website: string,
+    public company: {
+      name: string;
+      catchPhrase: string;
+      bs: string;
+    },
+  ) { }
+}
+```
 **18** Agregar code en wanteds-api.service:
 ```
 import { Injectable } from '@angular/core';
@@ -340,6 +403,8 @@ export class WantedsApiService {
 ```
 **19** Agregar code en wanted-item.ts:
 ```
+import { Component } from '@angular/core';
+import {Input} from '@angular/core';
 import { Wanted } from '../../model/wanted.entity';
 import {MatCardImage, MatCardModule} from '@angular/material/card';
 import {TranslatePipe} from '@ngx-translate/core';
@@ -410,6 +475,58 @@ aqui se pone lo que va a decir cada card
   </mat-card-footer>
 </mat-card>
 ```
+```
+<mat-card class="user-card">
+  <mat-card-header>
+    <mat-card-title>{{ user.id }} - {{ user.name }}</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <section class="info-section">
+      <div class="info-block">
+        <mat-icon class="info-icon">person</mat-icon>
+        <strong>{{ 'user-info.username' | translate }}:</strong>{{ user.username }}
+      </div>
+
+      <div class="info-block">
+        <mat-icon class="info-icon">email</mat-icon>
+        <strong>{{ 'user-info.email' | translate }}:</strong>{{ user.email }}
+      </div>
+
+      <div class="info-block">
+        <mat-icon class="info-icon">phone</mat-icon>
+        <strong>{{ 'user-info.phone' | translate }}:</strong>{{ user.phone }}
+      </div>
+
+      <div class="info-block">
+        <mat-icon class="info-icon">language</mat-icon>
+        <strong>{{ 'user-info.website' | translate }}:</strong>
+        <a href="https://{{ user.website }}" target="_blank">{{ user.website }}</a>
+      </div>
+
+      <div class="info-block">
+        <mat-icon class="info-icon">business</mat-icon>
+        <strong>{{ 'user-info.company' | translate }}:</strong>
+        <span>{{ user.company.name }}</span>
+        <small>"{{ user.company.catchPhrase }}"</small>
+      </div>
+
+      <div class="info-block">
+        <mat-icon class="info-icon">home</mat-icon>
+        <strong>{{ 'user-info.address' | translate }}:</strong>
+        <ul class="address-list">
+          <li>{{ user.address.street }}, {{ user.address.suite }}</li>
+          <li>{{ user.address.city }} ({{ user.address.zipcode }})</li>
+          <li>
+            {{ 'user-info.coordinates' | translate }}:
+            {{ user.address.geo.lat }}, {{ user.address.geo.lng }}
+          </li>
+        </ul>
+      </div>
+    </section>
+  </mat-card-content>
+</mat-card>
+```
 **20** Agregar code en wanteds-item.css:
 ```
 .wanted-card {
@@ -466,6 +583,7 @@ mat-card-image {
 **21** Agregar code en wanted-list.ts:
 ```
 import { Component } from '@angular/core';
+import {Input} from '@angular/core';
 import {Wanted} from '../../model/wanted.entity';
 import {WantedsApiService} from '../../services/wanteds-api.service';
 import {WantedItemComponent} from '../wanted-item/wanted-item.component';
