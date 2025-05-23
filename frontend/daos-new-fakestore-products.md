@@ -971,6 +971,7 @@ export default {
           @sort="onSort"
           dataKey="id"
       >
+        <! – informacion de la cards  – ->
         <pv-column field="vehiclePlate" :header="$t('home.plate')" sortable></pv-column>
         <pv-column field="fuelTankType" :header="$t('home.fuelTank')" sortable></pv-column>
         <pv-column field="totalSeats" :header="$t('home.totalSeats')" sortable></pv-column>
