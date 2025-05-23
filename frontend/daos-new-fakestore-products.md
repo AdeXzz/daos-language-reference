@@ -346,7 +346,7 @@ en.json
     "availableSeats": "Available Seats"
   },
   "footer": {
-    "copyright": "Copyright © 2025.",
+    "copyright": "Copyright © All rights reserved 2025.",
     "designer": "Designer Mathias Aspajo u202317584"
   },
   "pagenotfound": {
@@ -391,7 +391,7 @@ es.json
     "availableSeats": "Asientos disponibles"
   },
   "footer": {
-    "copyright": "Copyright © 2025",
+    "copyright": "Copyright © Todos los derechos reservados 2025.",
     "designer": "Creador Mathias Aspajo u202317584"
   },
   "pagenotfound": {
