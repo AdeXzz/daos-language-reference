@@ -686,6 +686,214 @@ export default {
 }
 </style>
 ```
+```
+<script>
+import { fetchAllData, createAssignment } from '../../firststudent/services/assignment.service.js';
+import { validateAssignment } from '../../firststudent/domain/assignment.domain.js';
+
+export default {
+  name: "assignments-component",
+  data() {
+    return {
+      studentId: '',
+      busId: '',
+      error: '',
+      success: '',
+      loading: false
+    }
+  },
+  methods: {
+    async assignStudent() {
+      this.error = '';
+      this.success = '';
+
+      if (
+        !this.studentId ||
+        !this.busId ||
+        isNaN(this.studentId) ||
+        isNaN(this.busId) ||
+        this.studentId < 1 ||
+        this.busId < 1
+      ) {
+        this.error = this.$t('assignments.required');
+        return;
+      }
+
+      this.loading = true;
+      try {
+        const { students, buses, assignments } = await fetchAllData();
+        if (!students.length) {
+          this.error = this.$t('assignments.error') + '(No students found)';
+          this.loading = false;
+          return;
+        }
+        if (!buses.length) {
+          this.error = this.$t('assignments.error') + ' (No buses found)';
+          this.loading = false;
+          return;
+        }
+        const student = students.find(s => s.id === Number(this.studentId));
+        const bus = buses.find(b => b.id === Number(this.busId));
+        const errorKey = validateAssignment({ student, bus, assignments, students });
+        if (errorKey) {
+          this.error = this.$t(`assignments.${errorKey}`);
+          this.loading = false;
+          return;
+        }
+        try {
+          await createAssignment({ studentId: student.id, busId: bus.id });
+          this.success = this.$t('assignments.success');
+          this.studentId = '';
+          this.busId = '';
+        } catch (e) {
+          this.error = this.$t('assignments.error') + ' (Failed to create assignment)';
+        }
+      } catch (e) {
+        this.error = this.$t('assignments.error') + ' (API unreachable)';
+      }
+      this.loading = false;
+    }
+  }
+}
+</script>
+
+<template>
+  <div class="assignment-page">
+    <h1>{{ $t('assignments.title') }}</h1>
+    <section>
+      <h2>{{ $t('assignments.new') }}</h2>
+      <div class="assignment-card">
+
+        <form @submit.prevent="assignStudent" class="assignment-form">
+          <div class="form-group">
+            <label for="studentId">{{ $t('assignments.studentId') }}</label>
+            <input
+              id="studentId"
+              v-model.number="studentId"
+              type="number"
+              min="1"
+              :disabled="loading"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="busId">{{ $t('assignments.busId') }}</label>
+            <input
+              id="busId"
+              v-model.number="busId"
+              type="number"
+              min="1"
+              :disabled="loading"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <pv-button type="submit" :disabled="loading" class="assign-btn">
+            {{ $t('assignments.assign') }}
+          </pv-button>
+        </form>
+
+        <div v-if="error" class="form-message error">{{ error }}</div>
+        <div v-if="success" class="form-message success">{{ success }}</div>
+      </div>
+    </section>
+  </div>
+</template>
+
+
+<style scoped>
+.assignment-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary-text);
+}
+
+.assignment-card {
+  background: var(--secondary-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+  padding: 2em 2.5em 2em 2.5em;
+  margin-top: 1.5em;
+  min-width: 320px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.assignment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.assignment-form label {
+  color: var(--primary-text);
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+.assignment-form input {
+  background: var(--input-bg);
+  color: var(--primary-text);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  padding: 0.6em 0.8em;
+  font-size: 1em;
+  width: 100%;
+  transition: border 0.2s;
+}
+
+.assignment-form input:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.assign-btn {
+  margin-top: 0.5em;
+  width: 100%;
+  background: var(--button-bg);
+  color: var(--primary-text);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1em;
+  padding: 0.7em 0;
+  transition: background 0.2s, border 0.2s;
+}
+
+.assign-btn:hover {
+  background: var(--button-hover);
+  border-color: var(--accent);
+}
+
+.form-message {
+  margin-top: 1.2em;
+  padding: 0.8em 1em;
+  border-radius: 6px;
+  font-size: 1em;
+  text-align: center;
+}
+
+.form-message.error {
+  background: #2d1a1a;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+}
+
+.form-message.success {
+  background: #1a2d1a;
+  color: #51ff8a;
+  border: 1px solid #51ff8a;
+}
+</style>
+```
 home.component.vue
 8 naranjas
 ```
