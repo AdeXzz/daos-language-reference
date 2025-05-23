@@ -263,7 +263,7 @@ export function validateAssignment({ student, bus, assignments, students }) {
   if (!bus) return 'invalidBus';
   if (student.districtId !== bus.districtId) return 'invalidBus';
   if (assignments.some(a => a.studentId === student.id)) return 'alreadyAssigned';
-
+ //logica de form
   const siblings = students.filter(s => s.parentId === student.parentId);
   const siblingAssignments = assignments.filter(a => siblings.some(s => s.id === a.studentId));
   if (siblingAssignments.length > 0 && siblingAssignments[0].busId !== bus.id) {
@@ -275,6 +275,7 @@ export function validateAssignment({ student, bus, assignments, students }) {
 **7** services:
 assignment.service.js
 ```
+
 export async function fetchAllData() {
   const [studentsRes, busesRes, assignmentsRes] = await Promise.all([
     fetch('http://localhost:3000/students'),
@@ -287,12 +288,7 @@ export async function fetchAllData() {
     assignments: await assignmentsRes.json()
   };
 }
-
-/**
- * Create a new assignment.
- * @param {Object} param0
- * @returns {Promise<Response>}
- */
+//crear asignacion de bus y estudiante
 
 export async function createAssignment({ studentId, busId }) {
   return fetch('http://localhost:3000/assignments', {
@@ -328,6 +324,7 @@ export async function fetchBusesWithAvailableSeats() {
   });
 
 
+  //contandor de asientos ocupados
   return buses.map(bus => ({
     ...bus,
     occupiedSeats: assignmentsCount[bus.id] || 0,
