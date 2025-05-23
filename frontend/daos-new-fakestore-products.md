@@ -1,21 +1,131 @@
 **1** el siguiente command:
 
 ```
-ng new pc14328u202317584 –-skip-git
+sudo ng new ea4328u202317584 
 ```
 CSS y no
 
-**2** Entrar al raider
+**2** Entrar al intel idea
 y abrir terminal del proyecto:
 
 ```
-ng add @angular/material
+sudo ng add @angular/material
 ```
-
+Y
+azure blue
+Y
 ```
 npm install @ngx-translate/core @ngx-translate/http-loader --save
 ```
-
+```
+npm install -g json-server@0.17.4
+```
+**3** Generar la parte del server:
+db.json y routes.json
+```
+{
+  "thresholds": [
+    {
+      "id": "1",
+      "fuelTankType": "Type A",
+      "minAverage": 10,
+      "maxAverage": 15
+    },
+    {
+      "id": "2",
+      "fuelTankType": "Type B",
+      "minAverage": 8,
+      "maxAverage": 12
+    },
+    {
+      "id": "3",
+      "fuelTankType": "Type C",
+      "minAverage": 6,
+      "maxAverage": 10
+    },
+    {
+      "id": "4",
+      "fuelTankType": "Type D",
+      "minAverage": 5,
+      "maxAverage": 8
+    }
+  ],
+  "efficiency-records": [
+    {
+      "id": "1",
+      "busId": 101,
+      "fuelTankType": "Type A",
+      "averageKmPerGallon": 12,
+      "calculatedAt": "2025-05-22T08:00:00Z"
+    },
+    {
+      "id": "2",
+      "busId": 102,
+      "fuelTankType": "Type B",
+      "averageKmPerGallon": 7,
+      "calculatedAt": "2025-05-22T09:00:00Z"
+    },
+    {
+      "id": "3",
+      "busId": 103,
+      "fuelTankType": "Type C",
+      "averageKmPerGallon": 11,
+      "calculatedAt": "2025-05-22T10:00:00Z"
+    },
+    {
+      "id": "4",
+      "busId": 104,
+      "fuelTankType": "Type D",
+      "averageKmPerGallon": 6,
+      "calculatedAt": "2025-05-22T11:00:00Z"
+    },
+    {
+      "busId": 1,
+      "fuelTankType": "Type A",
+      "averageKmPerGallon": 20,
+      "calculatedAt": "2025-05-22T17:34:49.876Z",
+      "id": "lD-6hZZ"
+    }
+  ],
+  "issues": [
+    {
+      "id": "1",
+      "busId": 102,
+      "issueType": "Fuel Efficiency",
+      "registeredAt": "2025-05-22T09:00:00Z"
+    },
+    {
+      "id": "2",
+      "busId": 103,
+      "issueType": "Fuel Efficiency",
+      "registeredAt": "2025-05-22T10:00:00Z"
+    },
+    {
+      "id": "3",
+      "busId": 105,
+      "issueType": "Fuel Efficiency",
+      "registeredAt": "2025-05-22T12:00:00Z"
+    },
+    {
+      "id": "4",
+      "busId": 106,
+      "issueType": "Fuel Efficiency",
+      "registeredAt": "2025-05-22T13:00:00Z"
+    },
+    {
+      "busId": 1,
+      "issueType": "Fuel Tank Issue",
+      "registeredAt": "2025-05-22T17:34:49.909Z",
+      "id": "Q2HqUXK"
+    }
+  ]
+}
+```
+```
+{
+  "/api/v1/*": "/$1"
+}
+```
 **3** Generar la parte de idiomas:
 
 agregar en public/assets/i18n
@@ -25,658 +135,907 @@ los paquetes en.json y es.json
 en.json
 ```
 {
+  "home": {
+    "home": "Home",
+    "welcome": "Welcome a Whova",
+    "efficiency": "Efficiency Analytics"
+  },
+  "toolbar": {
+    "home": "Home",
+    "fuel": "Fuel Wfficiency"
+  },
   "footer": {
-    "rights": "“Copyright © 2025 FBI. All rights reserved.",
-    "intro": "Developed by",
-    "author": "u202317584 - Mathias Aspajo Alvarez"
+    "copyright": "Copyright © 2025.",
+    "designer": "Designer Mathias Aspajo u202317584"
+  },
+  "fuel": {
+    "title1": "Fuel Efficiency Records",
+    "title2": "Add a Fuel Efficiency Record"
   }
+
 }
 ```
 
 es.json
 ```
 {
-  "footer": {
-    "rights": "Copyright © 2025 FBI. Todos los derechos reservados.",
-    "intro": "Hecho por",
-    "author": "u202317584 - Mathias Aspajo Alvarez"
-  }
-}
-```
+  "home": {
+    "home": "Inicio",
+    "welcome": "Bienvenido a Whova",
+    "efficiency": "Eficiencia Analytics"
 
-**4** Generar los environments:
-```
-ng generate environments
-```
-
-Poner en environment:
-De una url completa ejemplo: https://api.fbi.gov/wanted/v1/list
-```
-export const environment = {
-  production: true,
-  wantedFbiApiBaseUrl: 'https://api.fbi.gov',
-  wantedFbiApiEndPoint: '/wanted/v1/list'
-};
-```
-y en el otro solo poner false
-
-**5** Generar componentes en public (header, footer, language-switcher):
-```
-ng generate component public/components/header-content --skip-tests=true
-```
-```
-ng generate component public/components/footer-content --skip-tests=true
-```
-```
-ng generate component public/components/language-switcher --skip-tests=true
-```
-**6** Generar los siguientes archivos:
-```
-ng generate interface wanteds/services/wanted response
-```
-```
-ng generate class wanteds/model/wanted --type=entity --skip-tests=true
-```
-```
-ng generate class wanteds/services/wanted --type=assembler --skip-tests=true
-```
-```
-ng generate service wanteds/services/wanteds-api --skip-tests=true
-```
-```
-ng generate component wanteds/components/wanted-item --skip-tests=true
-```
-```
-ng generate component wanteds/components/wanted-list --skip-tests=true
-```
-**7** Agregar code en language.ts:
-```
-import { TranslateService } from "@ngx-translate/core";
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-```
-```
-@Component({
-  selector: 'app-language-switcher',
-  imports: [MatButtonToggleModule],
-  templateUrl: './language-switcher.component.html',
-  styleUrl: './language-switcher.component.css'
-})
-```
-```
-export class LanguageSwitcherComponent {
-  currentLang: string = 'en';
-  languages: string[] = ['en', 'es'];
-
-  constructor(private translate: TranslateService) {
-    this.currentLang = translate.currentLang;
-  }
-
-  useLanguage(language: string) : void {
-    this.translate.use(language);
-  }
-}
-```
-**8** Agregar code en language.html:
-```
-<mat-button-toggle-group [value]="currentLang" appearance="standard" aria-label="Preferred Language" name="language">
-  @for (language of languages; track language) {
-    <mat-button-toggle (click)="useLanguage(language)"
-                       [aria-label]="language"
-                       [value]="language">{{ language.toUpperCase() }}
-    </mat-button-toggle>
-  }
-</mat-button-toggle-group>
-```
-**9** Agregar code en header.ts:
-```
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import {LanguageSwitcherComponent} from '../language-switcher/language-switcher.component';
-import {MatCardImage} from '@angular/material/card';
-```
-```
-@Component({
-  selector: 'app-header-content',
-  imports: [MatToolbarModule, MatButtonModule, LanguageSwitcherComponent, MatCardImage],
-  templateUrl: './header-content.component.html',
-  styleUrl: './header-content.component.css'
-})
-```
-**10** Agregar code en header.html:
-```
-<mat-toolbar color="primary">
-  <img mat-card-image src="https://logo.clearbit.com/fbi.gov" alt="logo-algo">
-  <div class="toolbar-title">TITULO</div>
-  <span class="example-spacer"></span>
-  <span>
-    <app-language-switcher/>
-  </span>
-</mat-toolbar>
-```
-**11** Agregar code en header.css:
-```
-.example-spacer {
-  flex: 1 1 auto;
-}
-
-mat-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1rem;
-  box-sizing: border-box;
-  height: 100%;
-  max-height: 200px;
-}
-
-.toolbar-title {
-  font-size: 1.25rem;
-}
-
-@media (max-width: 600px) {
-  mat-toolbar {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .toolbar-title {
-    white-space: normal;
-    text-align: center;
-    width: 100%;
-    font-size: 1.1rem;
-  }
-
-  .example-spacer {
-    display: none;
-  }
-
-  app-language-switcher {
-    margin: 0 auto;
-  }
-}
-```
-**12** Agregar code en footer.ts:
-```
-import { TranslateModule } from "@ngx-translate/core";
-import {MatIcon} from '@angular/material/icon';
-```
-```
-@Component({
-  selector: 'app-footer-content',
-  imports: [TranslateModule, MatIcon],
-  templateUrl: './footer-content.component.html',
-  styleUrl: './footer-content.component.css'
-})
-```
-**13** Agregar code en footer.html:
-```
-<div class="footer-content">
-  <p>Copyright &copy; 2025 {{ 'footer.rights' | translate }}</p>
-  {{ 'footer.intro' | translate }}
-  <mat-icon color="warn" class="heart-icon">favorite</mat-icon>
-  {{ 'footer.author' | translate }}
-</div>
-```
-**14** Agregar code en footer.css:
-```
-.footer-content {
-  width: 100%;
-  box-sizing: border-box;
-  background-color: #101414;
-  color: #e0e3e2;
-  text-align: center;
-  margin: 0;
-  padding: 2rem;
-}
-```
-**15** Agregar code en app.config.ts:
-```
-import { HttpClient, provideHttpClient } from "@angular/common/http";
-import { provideTranslateService, TranslateLoader } from "@ngx-translate/core";
-import { TranslateHttpLoader } from "@ngx-translate/http-loader";
-```
-debajo de app.routes:
-```
-const httpLoaderFactory: (http: HttpClient) =>
-  TranslateLoader = (http: HttpClient) =>
-  new TranslateHttpLoader(http, './assets/i18n/', '.json');
-```
-luego reemplazar:
-```
-export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
-    provideHttpClient(),
-    provideTranslateService({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: httpLoaderFactory,
-        deps: [HttpClient]
-      },
-      defaultLanguage: 'en',
-    })
-  ]
-};
-```
-**16** Agregar code en wanted.response:
-Revisar el json
-```
-export interface WantedResponse {
-  items: WantedResource[];
-}
-export interface WantedResource {
-  images: { original: string }[];
-  title: string;
-  publication: string;
-  description: string;
-  status: string;
-  sex: string;
-  warning_message: string;
-  details: string;
-  url: string;
-  poster_classification: string;
-}
-```
-revisar segun el json completo
-```
-export interface UserResponse {
-  items: UserResource[];
-}
-export interface UserResource {
-  id: number;
-  name: string;
-  username: string;
-  email: string;
-  address: {
-    street: string;
-    suite: string;
-    city: string;
-    zipcode: string;
-    geo: {
-      lat: string;
-      lng: string;
-    }
   },
-  phone: string;
-  website: string;
-  company: {
-    name: string;
-    catchPhrase: string;
-    bs: string;
+  "toolbar": {
+    "home": "Inicio",
+    "fuel": "Fuel Efficiency"
+  },
+  "footer": {
+    "copyright": "Copyright © 2025.",
+    "designer": "Diseñador Mathias Aspajo u202317584"
+  },
+  "fuel": {
+    "title1": "Registros de eficiencia de combustible",
+    "title2": "Agregar un registro de eficiencia de combustible"
   }
 }
 ```
-**16** Agregar code en wanted.assembler:
+
+**4** Generar carpeta firstudent=nombre y public de la app en src/app:
+
+crear carpetas:
+components {carpeta fuel-tank-type-efficiency, luego crear lo mismo que termina en .component .css, .html, .ts y .spec.ts}
+models {carpeta efficiency-record.entity luego mismo nombre en .ts y .spec.ts}
+service {efficiency-record.service.ts}
+
+**5** fuel-tank-type-efficiency:
+.css
 ```
-import {WantedResource, WantedResponse} from './wanted.response';
-import {Wanted} from '../model/wanted.entity';
-
-export class WantedAssembler {
-
-  static toEntityFromResource(resource:WantedResource):Wanted {
-    return{
-      ...resource
-    }
-  }
-
-  static toEntitiesFromResponse(response:WantedResponse): Wanted[] {
-    return response.items.map(wanted=>
-      this.toEntityFromResource(wanted));
-  }
+mat-card {
+  margin: 16px;
+  max-width: 400px;
+  background-color: #A9A9A9;
 }
-```
-**17** Agregar code en wanted.entity:
-```
-export class Wanted {
-  constructor(
-    public images: { original: string }[],
-    public title: string,
-    public publication: string,
-    public description: string,
-    public status: string,
-    public sex: string,
-    public warning_message: string,
-    public details: string,
-    public url: string,
-    public poster_classification: string,
-  ) { }
+
+mat-card-content {
+  padding: 16px;
+}
+
+.footer-content {
+  padding: 16px;
+  background-color: #5A5A5A;
+}
+
+p {
+  margin: 8px 0;
 }
 ```
 ```
-export class Address {
-  constructor(
-    public street: string,
-    public suite: string,
-    public city: string,
-    public zipcode: string,
-    public geo: {
-      lat: string;
-      lng: string;
-    }
-  ) {
-  }
-}
-
-import { Address } from './address.entity';
-
-export class User {
-  constructor(
-    public id: number,
-    public name: string,
-    public username: string,
-    public email: string,
-    public address: Address,
-    public phone: string,
-    public website: string,
-    public company: {
-      name: string;
-      catchPhrase: string;
-      bs: string;
-    },
-  ) { }
-}
-```
-**18** Agregar code en wanteds-api.service:
-```
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, map} from 'rxjs';
-import {Wanted} from '../model/wanted.entity';
-import {WantedResponse} from './wanted.response';
-import {WantedAssembler} from './wanted.assembler';
-import {environment} from '../../../environments/environment';
-```
-```
-@Injectable({
-  providedIn: 'root'
-})
-export class WantedsApiService {
-  private baseUrl=environment.wantedFbiApiBaseUrl;
-  private wantedsEndpoint=environment.wantedFbiApiEndPoint;
-  constructor(private http: HttpClient) { }
-  getWanteds(): Observable<Wanted[]> {
-    return this.http.get<WantedResponse>(`${this.baseUrl}${this.wantedsEndpoint}`)
-      .pipe(
-        map(response => WantedAssembler.toEntitiesFromResponse(response)));
-  }
-}
-```
-**19** Agregar code en wanted-item.ts:
-```
-import { Component } from '@angular/core';
-import {Input} from '@angular/core';
-import { Wanted } from '../../model/wanted.entity';
-import {MatCardImage, MatCardModule} from '@angular/material/card';
-import {TranslatePipe} from '@ngx-translate/core';
-import {MatIcon} from '@angular/material/icon';
-import {NgIf} from '@angular/common';
-import {MatAnchor} from '@angular/material/button';
-
-@Component({
-  selector: 'app-wanted-item',
-  imports: [MatCardModule, MatIcon, TranslatePipe, NgIf, MatCardImage, MatAnchor],
-  templateUrl: './wanted-item.component.html',
-  styleUrl: './wanted-item.component.css'
-})
-export class WantedItemComponent {
-  @Input() wanted!: Wanted;
-}
-```
-**19** Agregar code en wanted-item.html:
-aqui se pone lo que va a decir cada card
-```
-<mat-card class="wanted-card">
-  <img mat-card-image [src]="wanted.images?.[0]?.original" alt="{{ wanted.title }}"/>
-
+<mat-card appearance="outlined">
   <mat-card-header>
-    <mat-card-title>{{ wanted.title }}</mat-card-title>
-    <mat-card-subtitle>{{ wanted.publication }}</mat-card-subtitle>
+    <mat-card-title>{{ fuelTankType }}</mat-card-title>
   </mat-card-header>
 
   <mat-card-content>
-    <section class="info-section">
-      <div class="info-block">
-        <mat-icon class="info-icon">description</mat-icon>
-        <strong>{{ 'Description' | translate }}:</strong> {{ wanted.description }}
-      </div>
-
-      <div class="info-block">
-        <mat-icon class="info-icon">check_circle</mat-icon>
-        <strong>{{ 'Status' | translate }}:</strong> {{ wanted.status }}
-      </div>
-
-      <div class="info-block">
-        <mat-icon class="info-icon">wc</mat-icon>
-        <strong>{{ 'Sex' | translate }}:</strong> {{ wanted.sex }}
-      </div>
-
-      <div class="info-block" *ngIf="wanted.warning_message">
-        <mat-icon class="info-icon">warning</mat-icon>
-        <strong>{{ 'Warning message' | translate }}:</strong> {{ wanted.warning_message }}
-      </div>
-
-      <div class="info-block" *ngIf="wanted.details">
-        <mat-icon class="info-icon">info</mat-icon>
-        <strong>{{ 'Details' | translate }}:</strong> {{ wanted.details }}
-      </div>
-    </section>
+    <p><strong>Buses Count:</strong> {{ busesCount }}</p>
+    <p><strong>Average Km Per Gallon:</strong> {{ averageKmPerGallon }}</p>
   </mat-card-content>
 
-  <mat-card-footer class="card-footer">
-    <div class="footer-left">
-      <a [href]="wanted.url" target="_blank" mat-button color="primary">
-        <mat-icon>open_in_new</mat-icon>
-        View Details
-      </a>
-    </div>
-    <div class="footer-right">
-      <strong>Classification:</strong> {{ wanted.poster_classification }}
+  <mat-card-footer>
+    <div class="footer-content">
+      <p><strong>Reported Issues:</strong> {{ reportedIssues }}</p>
+      <p><strong>Last Report:</strong> {{ lastReport }}</p>
     </div>
   </mat-card-footer>
 </mat-card>
 ```
 ```
-<mat-card class="user-card">
-  <mat-card-header>
-    <mat-card-title>{{ user.id }} - {{ user.name }}</mat-card-title>
-  </mat-card-header>
+import { Component, Input, OnInit } from '@angular/core';
+import { EfficiencyRecordEntity } from '../../models/efficiency-record.entity/efficiency-record.entity';
+import { MatCardModule } from '@angular/material/card';
+import { CommonModule } from '@angular/common';
 
-  <mat-card-content>
-    <section class="info-section">
-      <div class="info-block">
-        <mat-icon class="info-icon">person</mat-icon>
-        <strong>{{ 'user-info.username' | translate }}:</strong>{{ user.username }}
-      </div>
+@Component({
+  selector: 'app-fuel-tank-type-efficiency',
+  templateUrl: './fuel-tank-type-efficiency.component.html',
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatCardModule
+  ],
+  styleUrls: ['./fuel-tank-type-efficiency.component.css']
+})
+export class FuelTankTypeEfficiencyComponent implements OnInit {
+  @Input() fuelTankType!: string;
+  @Input() efficiencyRecords: EfficiencyRecordEntity[] = [];
+  @Input() issues: any[] = [];
 
-      <div class="info-block">
-        <mat-icon class="info-icon">email</mat-icon>
-        <strong>{{ 'user-info.email' | translate }}:</strong>{{ user.email }}
-      </div>
+  busesCount: number = 0;
+  averageKmPerGallon: string = '0.00';
+  reportedIssues: number = 0;
+  lastReport: string = 'No issues';
 
-      <div class="info-block">
-        <mat-icon class="info-icon">phone</mat-icon>
-        <strong>{{ 'user-info.phone' | translate }}:</strong>{{ user.phone }}
-      </div>
+  ngOnInit(): void {
+    this.calculateIndicators();
+  }
 
-      <div class="info-block">
-        <mat-icon class="info-icon">language</mat-icon>
-        <strong>{{ 'user-info.website' | translate }}:</strong>
-        <a href="https://{{ user.website }}" target="_blank">{{ user.website }}</a>
-      </div>
+  private calculateIndicators(): void {
+    const records = this.efficiencyRecords.filter(record => record.fuelTankType === this.fuelTankType);
+    this.busesCount = records.length;
 
-      <div class="info-block">
-        <mat-icon class="info-icon">business</mat-icon>
-        <strong>{{ 'user-info.company' | translate }}:</strong>
-        <span>{{ user.company.name }}</span>
-        <small>"{{ user.company.catchPhrase }}"</small>
-      </div>
+    const totalKmPerGallon = records.reduce((sum, record) => sum + record.averageKmPerGallon, 0);
+    this.averageKmPerGallon = (records.length > 0 ? (totalKmPerGallon / records.length).toFixed(2) : '0.00');
 
-      <div class="info-block">
-        <mat-icon class="info-icon">home</mat-icon>
-        <strong>{{ 'user-info.address' | translate }}:</strong>
-        <ul class="address-list">
-          <li>{{ user.address.street }}, {{ user.address.suite }}</li>
-          <li>{{ user.address.city }} ({{ user.address.zipcode }})</li>
-          <li>
-            {{ 'user-info.coordinates' | translate }}:
-            {{ user.address.geo.lat }}, {{ user.address.geo.lng }}
-          </li>
-        </ul>
-      </div>
-    </section>
-  </mat-card-content>
-</mat-card>
+    const relatedIssues = this.issues.filter(issue => {
+      const record = records.find(r => r.busId === issue.busId);
+      return !!record;
+    });
+    this.reportedIssues = relatedIssues.length;
+
+    if (relatedIssues.length > 0) {
+      const lastIssue = relatedIssues.reduce((latest, issue) =>
+        new Date(issue.registeredAt) > new Date(latest.registeredAt) ? issue : latest
+      );
+      this.lastReport = new Date(lastIssue.registeredAt).toLocaleString();
+    }
 ```
-**20** Agregar code en wanteds-item.css:
+**6** efficiency-record.entity:
 ```
-.wanted-card {
-  padding: 10px;
-  background-color: #263238;
-  color: white;
-  border-radius: 16px;
+export class EfficiencyRecordEntity {
+  id: number;
+  busId: number;
+  fuelTankType: string;
+  averageKmPerGallon: number;
+  calculatedAt: string;
+
+  constructor(
+    record: {
+      id: number;
+      busId: number;
+      fuelTankType: string;
+      averageKmPerGallon: number;
+      calculatedAt: string;
+    }
+  ) {
+    this.id = record.id;
+    this.busId = record.busId;
+    this.fuelTankType = record.fuelTankType;
+    this.averageKmPerGallon = record.averageKmPerGallon;
+    this.calculatedAt = record.calculatedAt;
+  }
+}
+```
+**7** efficiency-record.service.ts:
+
+```
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
+import { EfficiencyRecordEntity } from '../models/efficiency-record.entity/efficiency-record.entity';
+
+interface Threshold {
+  id: number;
+  fuelTankType: string;
+  minAverage: number;
+  maxAverage: number;
 }
 
-.info-section {
+interface Issue {
+  id?: number;
+  busId: number;
+  issueType: string;
+  registeredAt: string;
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class EfficiencyRecordService {
+  private apiUrl = 'http://localhost:3000';
+
+  constructor(private http: HttpClient) {}
+
+  getEfficiencyRecords(): Observable<EfficiencyRecordEntity[]> {
+    return this.http.get<EfficiencyRecordEntity[]>(`${this.apiUrl}/efficiency-records`);
+  }
+
+
+  getThresholds(): Observable<Threshold[]> {
+    return this.http.get<Threshold[]>(`${this.apiUrl}/thresholds`);
+  }
+
+
+  addEfficiencyRecord(record: Omit<EfficiencyRecordEntity, 'id'>): Observable<EfficiencyRecordEntity> {
+    return this.http.post<EfficiencyRecordEntity>(`${this.apiUrl}/efficiency-records`, record);
+  }
+
+
+  addIssue(issue: Omit<Issue, 'id'>): Observable<Issue> {
+    return this.http.post<Issue>(`${this.apiUrl}/issues`, {
+      ...issue,
+      issueType: 'Fuel Tank Issue'
+    });
+  }
+
+
+  checkExistingIssueForToday(busId: number): Observable<boolean> {
+    return this.http.get<Issue[]>(`${this.apiUrl}/issues`).pipe(
+      map(issues => {
+        const today = new Date().toISOString().split('T')[0];
+        return issues.some(issue =>
+          issue.busId === busId &&
+          new Date(issue.registeredAt).toISOString().startsWith(today)
+        );
+      })
+    );
+  }
+  getIssues(): Observable<Issue[]> {
+    return this.http.get<Issue[]>(`${this.apiUrl}/issues`);
+  }
+}
+```
+**8** en public:
+crear carpetas:
+components {carpetas footer-component: mismo nombre .component .css, .html y .ts
+language-switcher: mismo nombre .component .css, .html y .ts}
+pages {carpetas fuel-efficiency: mismo nombre .component .css, .html y .ts
+home: mismo nombre .component .css, .html y .ts
+page-not-found: mismo nombre .component .css, .html y .ts
+}
+**9** footer-component:
+.css
+```
+.footer-content {
+  background: #23272a;
+  color: #b0b3b8;
+  border-top: 1px solid #222;
+  text-align: center;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  padding: 16px 0 8px 0;
+  font-size: 1em;
+}
+```
+.html
+```
+<div class="footer-content">
+  <p>{{ 'footer.copyright' | translate }}</p>
+  <p>{{ 'footer.designer' | translate }}</p>
+</div>
+```
+.ts
+```
+import { Component } from '@angular/core';
+import {TranslatePipe} from '@ngx-translate/core';
+
+@Component({
+  selector: 'app-footer-component',
+  imports: [
+    TranslatePipe
+  ],
+  templateUrl: './footer-component.component.html',
+  styleUrl: './footer-component.component.css'
+})
+export class FooterComponentComponent {
+
+}
+```
+**10** language-switcher:
+.css
+```
+mat-button-toggle-group {
+  background: #23272a;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  border-radius: 6px;
+}
+
+mat-button-toggle {
+  color: #b0b3b8;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+}
+
+mat-button-toggle.mat-button-toggle-checked {
+  background: #1976d2 !important;
+  color: #fff !important;
+}
+
+mat-button-toggle:hover:not(.mat-button-toggle-checked) {
+  background: #181a1b !important;
+  color: #90caf9 !important;
+}
+```
+.html
+```
+<mat-button-toggle-group [value]="currentLang"
+                         appearance="standard"
+                         aria-label="Preferred language"
+                         name="language">
+  @for (language of languages; track language) {
+    <mat-button-toggle [value]="language"
+                       [aria-label]="language"
+                       (click)="useLanguage(language)">
+      {{ language.toUpperCase() }}
+    </mat-button-toggle>
+  }
+</mat-button-toggle-group>
+```
+.ts
+```
+import { Component } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
+import {MatButtonToggle, MatButtonToggleGroup} from '@angular/material/button-toggle';
+
+@Component({
+  selector: 'app-language-switcher',
+  imports: [
+    MatButtonToggleGroup,
+    MatButtonToggle,
+  ],
+  templateUrl: './language-switcher.component.html',
+  styleUrl: './language-switcher.component.css'
+})
+export class LanguageSwitcherComponent {
+  protected currentLang: string = 'en';
+  protected languages: string[] = [ 'en', 'es' ]
+
+  constructor(private translate: TranslateService) {
+    this.currentLang = translate.currentLang;
+  }
+
+  useLanguage(language: string): void {
+    this.translate.use(language);
+    this.currentLang = language;
+  }
+}
+```
+**11** fuel-efficiency:
+.css
+```
+
+.container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-container {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
+  margin-top: 20px;
 }
 
-.info-block {
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  align-self: flex-start;
+}
+
+.message {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.success-message {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+```
+.html
+```
+<div class="container">
+  <div class="header">
+    <h1>{{ 'fuel.title1' | translate }}</h1>
+  </div>
+
+  <h2>{{'fuel.title2' |translate}}</h2>
+
+  <form [formGroup]="recordForm" (ngSubmit)="onSubmit()" class="form-container">
+    <mat-form-field appearance="outline">
+      <mat-label>Bus Identifier</mat-label>
+      <input matInput type="number" formControlName="busId">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Fuel Tank Type</mat-label>
+      <mat-select formControlName="fuelTankType">
+        <mat-option *ngFor="let type of fuelTankTypes" [value]="type">
+          {{type}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Average Km per Gallon</mat-label>
+      <input matInput type="number" formControlName="averageKmPerGallon">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      Add Record
+    </button>
+  </form>
+
+  <div *ngIf="message" [class.error-message]="isError" [class.success-message]="!isError" class="message">
+    {{ message }}
+  </div>
+</div>
+```
+.ts
+```
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { EfficiencyRecordService } from '../../../firststudent/service/efficiency-record.service';
+import {TranslatePipe} from '@ngx-translate/core';
+import { MatOptionModule } from '@angular/material/core';
+
+@Component({
+  selector: 'app-fuel-efficiency',
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatOptionModule,
+    TranslatePipe
+  ],
+  templateUrl: './fuel-efficiency.component.html',
+  styleUrls: ['./fuel-efficiency.component.css']
+})
+export class FuelEfficiencyComponent {
+  recordForm: FormGroup;
+  fuelTankTypes = ['Type A', 'Type B', 'Type C', 'Type D'];
+  message = '';
+  isError = false;
+
+  constructor(
+    private fb: FormBuilder,
+    private efficiencyService: EfficiencyRecordService
+  ) {
+    this.recordForm = this.fb.group({
+      busId: ['', [Validators.required, Validators.min(1)]],
+      fuelTankType: ['', Validators.required],
+      averageKmPerGallon: ['', [Validators.required, Validators.min(0)]]
+    });
+  }
+
+  onSubmit() {
+    if (this.recordForm.valid) {
+      const formValue = this.recordForm.value;
+
+      // Verificar el tipo de tanque y sus límites
+      this.efficiencyService.getThresholds().subscribe({
+        next: (thresholds) => {
+          const threshold = thresholds.find(t => t.fuelTankType === formValue.fuelTankType);
+
+          if (!threshold) {
+            this.showMessage('Invalid Fuel Tank Type', true);
+            return;
+          }
+
+          const record = {
+            ...formValue,
+            calculatedAt: new Date().toISOString()
+          };
+
+          // Verificar si está fuera de los límites
+          if (formValue.averageKmPerGallon < threshold.minAverage ||
+            formValue.averageKmPerGallon > threshold.maxAverage) {
+
+            // Verificar si ya existe un issue para este bus hoy
+            this.efficiencyService.checkExistingIssueForToday(formValue.busId).subscribe({
+              next: (exists) => {
+                if (!exists) {
+                  const issue = {
+                    busId: formValue.busId,
+                    issueType: "Fuel Tank Issue",
+                    registeredAt: new Date().toISOString()
+                  };
+                  this.efficiencyService.addIssue(issue).subscribe();
+                }
+              }
+            });
+          }
+
+          // Guardar el registro
+          this.efficiencyService.addEfficiencyRecord(record).subscribe({
+            next: () => {
+              this.showMessage('Record successfully created', false);
+              this.recordForm.reset();
+            },
+            error: () => this.showMessage('Error creating record', true)
+          });
+        },
+        error: () => this.showMessage('Error validating fuel tank type', true)
+      });
+    }
+  }
+
+  private showMessage(text: string, isError: boolean) {
+    this.message = text;
+    this.isError = isError;
+    setTimeout(() => {
+      this.message = '';
+    }, 3000);
+  }
+}
+```
+**12** home:
+.css
+```
+.container {
+  padding: 20px;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h1, h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.header {
+  grid-column: 1 / -1;
+}
+
+h1, h2, p {
+  grid-column: 1 / -1;
+}
+.loading-container {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 4px;
+  min-height: 200px;
 }
+```
+.html
+```
+<div class="container">
+  <div class="header">
+    <h1>{{ 'home.home' | translate }}</h1>
+    <p>{{ 'home.welcome' | translate}}</p>
+    <h2>{{ 'home.efficiency' |translate}}</h2>
+  </div>
 
-.info-icon {
-  color: #f06292;
+  <div *ngIf="isLoading" class="loading-container">
+    <mat-spinner diameter="40"></mat-spinner>
+  </div>
+
+  <div class="content" *ngIf="!isLoading">
+    <app-fuel-tank-type-efficiency
+      *ngFor="let fuelTankType of fuelTankTypes"
+      [fuelTankType]="fuelTankType"
+      [efficiencyRecords]="efficiencyRecords"
+      [issues]="issues">
+    </app-fuel-tank-type-efficiency>
+  </div>
+</div>
+```
+.ts
+```
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { MatCardModule } from '@angular/material/card';
+import { FuelTankTypeEfficiencyComponent } from '../../../firststudent/components/fuel-tank-type-efficiency/fuel-tank-type-efficiency.component';
+import { EfficiencyRecordService } from '../../../firststudent/service/efficiency-record.service';
+import { TranslatePipe } from '@ngx-translate/core';
+import { forkJoin } from 'rxjs';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import {EfficiencyRecordEntity} from '../../../firststudent/models/efficiency-record.entity/efficiency-record.entity';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatCardModule,
+    FuelTankTypeEfficiencyComponent,
+    TranslatePipe,
+    MatProgressSpinnerModule
+  ],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
+})
+export class HomeComponent implements OnInit {
+   fuelTankTypes: string[] = ['Type A', 'Type B', 'Type C', 'Type D'];
+    efficiencyRecords: EfficiencyRecordEntity[] = [];
+     issues: any[] = [];
+     isLoading = true;
+
+  constructor(private efficiencyRecordService: EfficiencyRecordService) {}
+
+  ngOnInit(): void {
+    this.loadData();
+  }
+private loadData(): void {
+  forkJoin({
+    records: this.efficiencyRecordService.getEfficiencyRecords(),
+    issues: this.efficiencyRecordService.getIssues()
+  }).subscribe({
+    next: (data) => {
+      if (data.records && Array.isArray(data.records)) {
+        this.efficiencyRecords = data.records.map(record => new EfficiencyRecordEntity(record));
+      } else {
+        console.error('Invalid data format for efficiency records:', data.records);
+        this.efficiencyRecords = [];
+      }
+
+      if (data.issues && Array.isArray(data.issues)) {
+        this.issues = data.issues;
+      } else {
+        console.error('Invalid data format for issues:', data.issues);
+        this.issues = [];
+      }
+
+      this.isLoading = false;
+    },
+    error: (error) => {
+      console.error('Error loading data:', error);
+      this.isLoading = false;
+    }
+  });
 }
-
-mat-card-image {
-  border-radius: 8px;
-  object-fit: cover;
-  max-height: 300px;
-}
-
-.card-footer {
+```
+**13** page-not-found:
+.css
+```
+:host {
+  background: #181a1b;
+  color: #f5f5f5;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 12px 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.9rem;
 }
 
-.footer-left a {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  text-decoration: none;
+h1 {
   color: #90caf9;
 }
 
-.footer-right {
-  text-align: right;
+button[mat-button] {
+  background: #23272a;
+  color: #90caf9;
+  border: 1px solid #1976d2;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+button[mat-button]:hover {
+  background: #1976d2;
+  color: #fff;
 }
 ```
-**21** Agregar code en wanted-list.ts:
+.html
 ```
-import { Component } from '@angular/core';
-import {Input} from '@angular/core';
-import {Wanted} from '../../model/wanted.entity';
-import {WantedsApiService} from '../../services/wanteds-api.service';
-import {WantedItemComponent} from '../wanted-item/wanted-item.component';
+<h1>Page not found</h1>
+<p>The path <b>{{ invalidPath }}</b> is not valid.</p>
+
+
+<button mat-button (click)="onNavigateHome()">Home</button>
+```
+3 ama y 1 rojo
+.ts
+```
+import {Component, inject, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {MatButton} from '@angular/material/button';
 
 @Component({
-  selector: 'app-wanted-list',
-  imports: [WantedItemComponent],
-  templateUrl: './wanted-list.component.html',
-  styleUrl: './wanted-list.component.css'
+  selector: 'app-page-not-found',
+  imports: [
+    MatButton
+  ],
+  templateUrl: './page-not-found.component.html',
+  styleUrl: './page-not-found.component.css'
 })
-export class WantedListComponent {
-  wanteds: Array<Wanted> = [];
-  constructor(private wantedsApiService: WantedsApiService) { }
+export class PageNotFoundComponent {
+  /*logian para regrear a home*/
+  protected invalidPath: string = '';
+  private route: ActivatedRoute = inject(ActivatedRoute);
+  private router: Router = inject(Router);
+
   ngOnInit(): void {
-    this.wantedsApiService.getWanteds().subscribe(
-      wanteds => this.wanteds = wanteds);
+    this.invalidPath = this.route.snapshot.url.map(urlSegment => urlSegment.path).join('/');
+  }
+
+  protected onNavigateHome(): void {
+    this.router.navigate(['home']).then();
   }
 }
 ```
-**22** Agregar code en wanted-list.html:
+**14** app.component.css:
 ```
-<div class="wanted-list-container">
-  @for (wanted of wanteds; track wanted.url) {
-    <app-wanted-item [wanted]="wanted"/>
-  }
-</div>
-```
-**23** Agregar code en wanted-list.css:
-```
-.wanted-list-container{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 11px;
+:host {
+  background: #181a1b;
+  color: #f5f5f5;
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  display: block;
 }
 
-@media (max-width: 600px) {
-  .wanted-list-container {
-    grid-template-columns: 1fr;
-  }
+a[mat-button] {
+  color: #90caf9;
+  transition: background 0.2s, color 0.2s;
+}
+
+a[mat-button]:hover {
+  background: #23272a;
+  color: #fff;
+}
+
+mat-toolbar {
+  background: #23272a !important;
+  color: #f5f5f5 !important;
+}
+
+.mat-spacer {
+  flex: 1 1 auto;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.mat-spacer {
+  flex: 1 1 auto;
 }
 ```
-**24** Agregar code en app.component.ts:
+2 amarillos
+**15** app.component.html:
+```
+<mat-toolbar color="primary">
+
+  <mat-toolbar-row>
+
+    <div class="logo-container">
+      <img src="https://logo.clearbit.com/firststudentinc.com" alt="FIRSTstudent Logo" class="logo">
+      <span style="font-weight:bold; font-size:1.3em;">HALO Maintenance</span>
+    </div>
+
+    <span class="mat-spacer"></span>
+
+
+    <a mat-button [routerLink]="'/home'">{{ 'toolbar.home' | translate }}</a>
+
+    <a mat-button [routerLink]="'/fuelefficiency'">fuel efficiency</a>
+
+    <app-language-switcher></app-language-switcher>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+<app-footer-component></app-footer-component>
+```
+2 rojos 1 amarillo
+**16** app.component.ts:
 ```
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import {HeaderContentComponent} from './public/components/header-content/header-content.component';
-import {FooterContentComponent} from './public/components/footer-content/footer-content.component';
-import {WantedListComponent} from './wanteds/components/wanted-list/wanted-list.component';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
+import {FooterComponentComponent} from './public/components/footer-component/footer-component.component';
+import {LanguageSwitcherComponent} from './public/components/language-switcher/language-switcher.component';
+import {MatToolbar, MatToolbarRow} from '@angular/material/toolbar';
+import {MatAnchor} from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
-  imports: [ HeaderContentComponent, FooterContentComponent, WantedListComponent],
+  imports: [RouterOutlet, MatToolbar,
+    MatToolbarRow, MatAnchor, RouterLink, RouterLinkActive, TranslatePipe,
+    LanguageSwitcherComponent, FooterComponentComponent, TranslatePipe],
+
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'JSON Placeholder Users API';
+  title = 'ea4350u20231b866';
+  options = [
+    { link: '/home', label: 'home'},
+    //store/ se puede quitar
+
+    { link: '/fuelefficiency', label: 'fuelefficiency'},
+  ]
+
   constructor(private translate: TranslateService) {
-    this.translate.addLangs(['en', 'es']);
     this.translate.setDefaultLang('en');
     this.translate.use('en');
   }
 }
 ```
-**25** Agregar code en app.component.html:
+**17** app.config.ts:
 ```
-<div class="app-container">
-  <app-header-content/>
-  <main><app-wanted-list/></main>
-  <app-footer-content/>
-</div>
-```
-**26** Agregar code en app.component.css:
-```
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+import {ApplicationConfig, importProvidersFrom, provideZoneChangeDetection} from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
+import {HttpClient, provideHttpClient} from '@angular/common/http';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 
-main {
-  flex: 1;
-  padding: 1rem;
-  max-width: 100%;
-  box-sizing: border-box;
-}
+export const HttpLoaderFactory = (http: HttpClient) =>
+  new TranslateHttpLoader(http);
+// toda cambiar
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideHttpClient(),
+    importProvidersFrom(TranslateModule.forRoot({
+      loader: { provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient]}
+    }))
+  ]
+
+};
 ```
-**27** Agregar en run:
+**18** app.routes.ts:
+```
+import { Routes } from '@angular/router';
+import  {HomeComponent} from './public/pages/home/home.component';
 
-antes de correr un comando: npm install
+const fuelefficiencyComponent =
+  ()=> import('./public/pages/fuel-efficiency/fuel-efficiency.component')
+    .then(m => m.FuelEfficiencyComponent);
 
-agregar un npm 
-y que vaya al package.json
-commnad run
-scripts: start
+const PageNotFoundComponent =
+  () => import('./public/pages/page-not-found/page-not-found.component')
+    .then(m => m.PageNotFoundComponent);
+
+export const routes: Routes = [
+  { path: 'home',     component:      HomeComponent },
+
+  //{ path: 'bundles',  loadComponent:  BundlesComponent },
+  { path: 'fuelefficiency',  loadComponent:  fuelefficiencyComponent },
+  { path: '',       redirectTo:     'home', pathMatch: 'full' },
+  { path: '**',     loadComponent: PageNotFoundComponent }
+
+];
+```
+revisar y agregar los componentes q faltan en las carpetas antes de iniciar
+
+
+
+
+
+
+
+
+
+
+
 
