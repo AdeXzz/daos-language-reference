@@ -1,0 +1,19 @@
+{
+  "home": "Inicio",
+  "welcome": "Bienvenido a Flow Money Automation BV",
+  "accountOverview": "Resumen de Cuenta",
+  "transaction": "Ejecución ",
+  "transactionValidation": "Validación de Transacción",
+  "transactionId": "ID de Transacción",
+  "execute": "Ejecutar Transacción",
+  "invalidId": "ID de transacción inválido",
+  "alreadyProcessed": "Ya procesada",
+  "totalTransactions": "Total de Transacciones",
+  "successRate": "Porcentaje de Éxito %",
+  "notFound": "Página no encontrada",
+  "backHome": "Volver al Inicio",
+  "transactionExecution": "Ejecución de transacción ",
+  "accountType": "Tipo de Cuenta",
+  "accountNumber": "Número de Cuenta",
+  "balance": "Saldo"
+}
