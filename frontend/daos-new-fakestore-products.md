@@ -1244,6 +1244,188 @@ export default {
 }
 </style>
 ```
+```
+<script>
+import LanguageSwitcher from "./public/components/language-switcher.component.vue";
+import FooterContent from "./public/components/footer-content.component.vue";
+export default {
+  name: 'app',
+  components: {FooterContent, LanguageSwitcher},
+  data() {
+    return {
+      drawer: false,
+      items: [
+        { label: 'option.home', to: '/home' },
+        { label: 'option.assignments', to: '/transportation/assignments/new' }
+      ]
+    }
+  },
+  methods: {
+    toggleDrawer() {
+      this.drawer = !this.drawer;
+    }
+  }
+}
+</script>
+
+<template>
+  <pv-toast/>
+  <pv-confirm-dialog/>
+  <header>
+    <pv-toolbar class="bg-primary">
+      <template #start>
+        <div class="toolbar-left" style="display: flex; align-items: center;">
+          <button
+              class="hamburger"
+              :class="{ open: drawer }"
+              @click="toggleDrawer"
+              aria-label="Menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <! – Logo – ->
+          <img
+              src="https://logo.clearbit.com/firststudentinc.com"
+              alt="FIRSTstudent Logo"
+              style="height: 40px; margin-right: 1rem;"
+          />
+          <span style="font-weight: 500; font-size: 1.1rem;">{{ $t('toolbar.trusted') }}</span>
+        </div>
+      </template>
+      <template #center>
+        <div class="flex-column nav-links">
+          <pv-button v-for="item in items" :key="item.label" as-child v-slot="slotProps">
+            <router-link :to="item.to" :class="slotProps['class']">{{ $t(item.label)}}</router-link>
+          </pv-button>
+        </div>
+      </template>
+      <template #end>
+        <language-switcher/>
+      </template>
+    </pv-toolbar>
+    <pv-drawer v-model:visible="drawer" position="left">
+      <nav class="drawer-links">
+        <pv-button
+            v-for="item in items"
+            :key="item.label"
+            as-child
+            class="drawer-link-btn"
+            :class="{ active: $route.path === item.to }"
+            @click="drawer = false"
+        >
+          <router-link :to="item.to" class="drawer-link-content">
+            <i :class="item.icon" class="drawer-link-icon"></i>
+            <span>{{ $t(item.label) }}</span>
+          </router-link>
+        </pv-button>
+      </nav>
+    </pv-drawer>
+
+  </header>
+  <main>
+    <router-view/>
+  </main>
+  <footer>
+    <footer-content/>
+  </footer>
+</template>
+
+<style scoped>
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  margin-right: 1rem;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  transition: background 0.2s;
+}
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 24px;
+  background: var(--primary-text);
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2rem 1.5rem;
+  min-width: 200px;
+  background: var(--secondary-bg);
+  height: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.drawer-link-btn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: var(--primary-text);
+  font-size: 1.13rem;
+  font-weight: 600;
+  padding: 0;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.drawer-link-btn .drawer-link-content {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  width: 100%;
+  padding: 0.85em 0.7em;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s, color 0.2s;
+}
+.drawer-link-btn .drawer-link-icon {
+  font-size: 1.3em;
+  color: var(--accent);
+}
+.drawer-link-btn:hover .drawer-link-content,
+.drawer-link-btn:focus .drawer-link-content {
+  background: var(--button-hover);
+  color: var(--accent);
+  box-shadow: 0 2px 8px rgba(100,108,255,0.08);
+}
+.drawer-link-btn.active .drawer-link-content {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(100,108,255,0.15);
+}
+.drawer-link-btn.active .drawer-link-icon {
+  color: #fff;
+}
+</style>
+```
 **11** i18n.js:
 ```
 import en from './locales/en.json';
