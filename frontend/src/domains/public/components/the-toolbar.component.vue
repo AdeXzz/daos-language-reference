@@ -47,7 +47,6 @@ export default {
   }
 }
 </script>
-
 <style scoped>
 .nav-links {
   display: flex;
@@ -57,12 +56,12 @@ export default {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color: #4a4a6a;
   font-weight: 500;
   transition: color 0.2s;
 }
 
 .nav-links a:hover {
-  color: #007bff;
+  color: #8a2be2;
 }
 </style>
