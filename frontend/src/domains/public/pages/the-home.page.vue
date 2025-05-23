@@ -38,27 +38,27 @@ export default {
   margin: 0 auto;
   padding: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #ffffff;
-  color: #333;
+  background-color: #f9f9ff;
+  color: #1e1e2f;
 }
 
 .page-title {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: #2c3e50;
+  color: #4b0082; /* índigo */
 }
 
 .welcome-text {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
-  color: #555;
+  color: #5c5e7a;
 }
 
 .section-title {
   font-size: 1.5rem;
   margin: 2rem 0 1rem;
-  color: #34495e;
+  color: #3a3f93;
 }
 
 .account-grid {
