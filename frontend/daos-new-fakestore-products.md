@@ -964,7 +964,7 @@ import {MatAnchor} from '@angular/material/button';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ea4350u20231b866';
+  title = 'ea4328u202317584';
   options = [
     { link: '/home', label: 'home'},
     //store/ se puede quitar
