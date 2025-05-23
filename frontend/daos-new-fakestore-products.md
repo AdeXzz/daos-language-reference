@@ -1,22 +1,8 @@
-**1** el siguiente command:
+**1** crear carpeta:
 
-```
-sudo ng new ea4328u202317584 
-```
-CSS y no
+webstorm -> vite -> elegir carpeta -> template: vue -> no marcar y crear
 
-**2** Entrar al intel idea
-y abrir terminal del proyecto:
-
-```
-sudo ng add @angular/material
-```
-Y
-azure blue
-Y
-```
-npm install @ngx-translate/core @ngx-translate/http-loader --save
-```
+**2** ingresar comandos:
 ```
 npm install -g json-server@0.17.4
 ```
@@ -24,99 +10,218 @@ npm install -g json-server@0.17.4
 db.json y routes.json
 ```
 {
-  "thresholds": [
+  {
+  "buses": [
     {
-      "id": "1",
+      "id": 1,
+      "vehiclePlate": "ABC-1234",
       "fuelTankType": "Type A",
-      "minAverage": 10,
-      "maxAverage": 15
+      "districtId": 1,
+      "totalSeats": 20
     },
     {
-      "id": "2",
+      "id": 2,
+      "vehiclePlate": "XYZ-5678",
       "fuelTankType": "Type B",
-      "minAverage": 8,
-      "maxAverage": 12
+      "districtId": 1,
+      "totalSeats": 25
     },
     {
-      "id": "3",
+      "id": 3,
+      "vehiclePlate": "LMN-9012",
       "fuelTankType": "Type C",
-      "minAverage": 6,
-      "maxAverage": 10
+      "districtId": 2,
+      "totalSeats": 30
     },
     {
-      "id": "4",
+      "id": 4,
+      "vehiclePlate": "PQR-3456",
       "fuelTankType": "Type D",
-      "minAverage": 5,
-      "maxAverage": 8
+      "districtId": 2,
+      "totalSeats": 40
+    },
+    {
+      "id": 5,
+      "vehiclePlate": "STU-7890",
+      "fuelTankType": "Type A",
+      "districtId": 3,
+      "totalSeats": 22
+    },
+    {
+      "id": 6,
+      "vehiclePlate": "VWX-2345",
+      "fuelTankType": "Type C",
+      "districtId": 3,
+      "totalSeats": 35
     }
   ],
-  "efficiency-records": [
+  "students": [
     {
-      "id": "1",
-      "busId": 101,
-      "fuelTankType": "Type A",
-      "averageKmPerGallon": 12,
-      "calculatedAt": "2025-05-22T08:00:00Z"
+      "id": 1,
+      "firstName": "Emma",
+      "lastName": "Smith",
+      "districtId": 1,
+      "parentId": 101
     },
     {
-      "id": "2",
-      "busId": 102,
-      "fuelTankType": "Type B",
-      "averageKmPerGallon": 7,
-      "calculatedAt": "2025-05-22T09:00:00Z"
+      "id": 2,
+      "firstName": "Liam",
+      "lastName": "Smith",
+      "districtId": 1,
+      "parentId": 101
     },
     {
-      "id": "3",
-      "busId": 103,
-      "fuelTankType": "Type C",
-      "averageKmPerGallon": 11,
-      "calculatedAt": "2025-05-22T10:00:00Z"
+      "id": 3,
+      "firstName": "Olivia",
+      "lastName": "Johnson",
+      "districtId": 1,
+      "parentId": 102
     },
     {
-      "id": "4",
-      "busId": 104,
-      "fuelTankType": "Type D",
-      "averageKmPerGallon": 6,
-      "calculatedAt": "2025-05-22T11:00:00Z"
+      "id": 4,
+      "firstName": "Noah",
+      "lastName": "Johnson",
+      "districtId": 1,
+      "parentId": 102
     },
     {
-      "busId": 1,
-      "fuelTankType": "Type A",
-      "averageKmPerGallon": 20,
-      "calculatedAt": "2025-05-22T17:34:49.876Z",
-      "id": "lD-6hZZ"
+      "id": 5,
+      "firstName": "Ava",
+      "lastName": "Wilson",
+      "districtId": 2,
+      "parentId": 103
+    },
+    {
+      "id": 6,
+      "firstName": "James",
+      "lastName": "Wilson",
+      "districtId": 2,
+      "parentId": 103
+    },
+    {
+      "id": 7,
+      "firstName": "Sophia",
+      "lastName": "Anderson",
+      "districtId": 2,
+      "parentId": 104
+    },
+    {
+      "id": 8,
+      "firstName": "William",
+      "lastName": "Anderson",
+      "districtId": 2,
+      "parentId": 104
+    },
+    {
+      "id": 9,
+      "firstName": "Isabella",
+      "lastName": "Jackson",
+      "districtId": 3,
+      "parentId": 105
+    },
+    {
+      "id": 10,
+      "firstName": "Lucas",
+      "lastName": "Jackson",
+      "districtId": 3,
+      "parentId": 105
+    },
+    {
+      "id": 11,
+      "firstName": "Mia",
+      "lastName": "Harris",
+      "districtId": 3,
+      "parentId": 106
+    },
+    {
+      "id": 12,
+      "firstName": "Henry",
+      "lastName": "Harris",
+      "districtId": 3,
+      "parentId": 106
+    },
+    {
+      "id": 13,
+      "firstName": "Charlotte",
+      "lastName": "Lee",
+      "districtId": 1,
+      "parentId": 107
+    },
+    {
+      "id": 14,
+      "firstName": "Ethan",
+      "lastName": "Walker",
+      "districtId": 2,
+      "parentId": 108
+    },
+    {
+      "id": 15,
+      "firstName": "Amelia",
+      "lastName": "Walker",
+      "districtId": 2,
+      "parentId": 108
     }
   ],
-  "issues": [
+  "assignments": [
     {
-      "id": "1",
-      "busId": 102,
-      "issueType": "Fuel Efficiency",
-      "registeredAt": "2025-05-22T09:00:00Z"
-    },
-    {
-      "id": "2",
-      "busId": 103,
-      "issueType": "Fuel Efficiency",
-      "registeredAt": "2025-05-22T10:00:00Z"
-    },
-    {
-      "id": "3",
-      "busId": 105,
-      "issueType": "Fuel Efficiency",
-      "registeredAt": "2025-05-22T12:00:00Z"
-    },
-    {
-      "id": "4",
-      "busId": 106,
-      "issueType": "Fuel Efficiency",
-      "registeredAt": "2025-05-22T13:00:00Z"
-    },
-    {
+      "id": 1,
+      "studentId": 1,
       "busId": 1,
-      "issueType": "Fuel Tank Issue",
-      "registeredAt": "2025-05-22T17:34:49.909Z",
-      "id": "Q2HqUXK"
+      "assignedAt": "2025-05-01T08:00:00Z"
+    },
+    {
+      "id": 2,
+      "studentId": 2,
+      "busId": 1,
+      "assignedAt": "2025-05-01T08:00:00Z"
+    },
+    {
+      "id": 3,
+      "studentId": 3,
+      "busId": 1,
+      "assignedAt": "2025-05-02T09:00:00Z"
+    },
+    {
+      "id": 4,
+      "studentId": 4,
+      "busId": 1,
+      "assignedAt": "2025-05-02T09:00:00Z"
+    },
+    {
+      "id": 5,
+      "studentId": 5,
+      "busId": 3,
+      "assignedAt": "2025-05-03T10:00:00Z"
+    },
+    {
+      "id": 6,
+      "studentId": 6,
+      "busId": 3,
+      "assignedAt": "2025-05-03T10:00:00Z"
+    },
+    {
+      "id": 7,
+      "studentId": 7,
+      "busId": 3,
+      "assignedAt": "2025-05-04T11:00:00Z"
+    },
+    {
+      "id": 8,
+      "studentId": 8,
+      "busId": 3,
+      "assignedAt": "2025-05-04T11:00:00Z"
+    },
+    {
+      "id": 9,
+      "studentId": 9,
+      "busId": 5,
+      "assignedAt": "2025-05-05T12:00:00Z"
+    },
+    {
+      "studentId": 10,
+      "busId": 5,
+      "assignedAt": "2025-05-23T03:05:54.474Z",
+      "id": 10
     }
   ]
 }
@@ -126,905 +231,972 @@ db.json y routes.json
   "/api/v1/*": "/$1"
 }
 ```
-**3** Generar la parte de idiomas:
+**4** Generar los demas comandos:
+```
+npm install vue-i18n@10
+```
+```
+npm i primevue @primeuix/themes primeicons primeflex
+```
+```
+npm install primevue @primeuix/themes
+```
+```
+npm install primeflex
+```
+```
+npm install primeicons
+```
+**5** Generar carpetas en src:
+-firstudent:domain, services
+-locales
+-public:components, pages
+-router
 
-agregar en public/assets/i18n
+**6** domain:
+firststudents
+assignment.domain.js
+4 naranjas
+```
+export function validateAssignment({ student, bus, assignments, students }) {
+  if (!student) return 'invalidStudent';
+  if (!bus) return 'invalidBus';
+  if (student.districtId !== bus.districtId) return 'invalidBus';
+  if (assignments.some(a => a.studentId === student.id)) return 'alreadyAssigned';
 
-los paquetes en.json y es.json
+  const siblings = students.filter(s => s.parentId === student.parentId);
+  const siblingAssignments = assignments.filter(a => siblings.some(s => s.id === a.studentId));
+  if (siblingAssignments.length > 0 && siblingAssignments[0].busId !== bus.id) {
+    return 'siblingBus';
+  }
+  return null;
+}
+```
+**7** services:
+assignment.service.js
+```
+export async function fetchAllData() {
+  const [studentsRes, busesRes, assignmentsRes] = await Promise.all([
+    fetch('http://localhost:3000/students'),
+    fetch('http://localhost:3000/buses'),
+    fetch('http://localhost:3000/assignments')
+  ]);
+  return {
+    students: await studentsRes.json(),
+    buses: await busesRes.json(),
+    assignments: await assignmentsRes.json()
+  };
+}
 
+/**
+ * Create a new assignment.
+ * @param {Object} param0
+ * @returns {Promise<Response>}
+ */
+
+export async function createAssignment({ studentId, busId }) {
+  return fetch('http://localhost:3000/assignments', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      studentId,
+      busId,
+      assignedAt: new Date().toISOString()
+    })
+  });
+}
+```
+
+
+bus.service.js
+1 naranja
+```
+export async function fetchBusesWithAvailableSeats() {
+
+
+  const [busesRes, assignmentsRes] = await Promise.all([
+    fetch('http://localhost:3000/buses'),
+    fetch('http://localhost:3000/assignments')
+  ]);
+  const buses = await busesRes.json();
+  const assignments = await assignmentsRes.json();
+
+
+  const assignmentsCount = {};
+  assignments.forEach(a => {
+    assignmentsCount[a.busId] = (assignmentsCount[a.busId] || 0) + 1;
+  });
+
+
+  return buses.map(bus => ({
+    ...bus,
+    occupiedSeats: assignmentsCount[bus.id] || 0,
+    availableSeats: bus.totalSeats - (assignmentsCount[bus.id] || 0)
+  }));
+}
+```
+**8** locales:
 en.json
 ```
 {
   "home": {
-    "home": "Home",
-    "welcome": "Welcome a Whova",
-    "efficiency": "Efficiency Analytics"
-  },
-  "toolbar": {
-    "home": "Home",
-    "fuel": "Fuel Wfficiency"
+    "welcome": "Welcome to FIRSTstudent!",
+    "buses": "Buses",
+    "plate": "Plate",
+    "fuelTank": "Fuel Tank",
+    "totalSeats": "Total Seats",
+    "occupiedSeats": "Occupied Seats",
+    "availableSeats": "Available Seats"
   },
   "footer": {
     "copyright": "Copyright © 2025.",
     "designer": "Designer Mathias Aspajo u202317584"
   },
-  "fuel": {
-    "title1": "Fuel Efficiency Records",
-    "title2": "Add a Fuel Efficiency Record"
+  "pagenotfound": {
+    "title": "Page Not Found",
+    "back-home": "Back to Home"
+  },
+  "toolbar": {
+    "trusted": "Trusted student transportation"
+  },
+
+  "option": {
+    "home": "Home",
+    "assignments": "Assignments"
+  },
+  "assignments": {
+    "title": "Assign Student to Bus",
+    "new": "New Assignment",
+    "studentId": "Student Id",
+    "busId": "Bus Id",
+    "assign": "Assign",
+    "required": "Both fields are required.",
+    "invalidStudent": "Invalid Student Id",
+    "invalidBus": "Invalid Bus",
+    "alreadyAssigned": "Already Assigned",
+    "siblingBus": "Siblings must be assigned to the same bus.",
+    "success": "Assignment registered successfully.",
+    "error": "An error occurred. Please try again."
   }
 
 }
 ```
-
 es.json
 ```
 {
   "home": {
-    "home": "Inicio",
-    "welcome": "Bienvenido a Whova",
-    "efficiency": "Eficiencia Analytics"
-
-  },
-  "toolbar": {
-    "home": "Inicio",
-    "fuel": "Fuel Efficiency"
+    "welcome": "¡Bienvenido FIRSTstudent",
+    "buses": "Buses",
+    "plate": "Placa",
+    "fuelTank": "Tipo de tanque",
+    "totalSeats": "Asientos totales",
+    "occupiedSeats": "Asientos ocupados",
+    "availableSeats": "Asientos disponibles"
   },
   "footer": {
-    "copyright": "Copyright © 2025.",
-    "designer": "Diseñador Mathias Aspajo u202317584"
+    "copyright": "Copyright © 2025",
+    "designer": "Creador Mathias Aspajo u202317584"
   },
-  "fuel": {
-    "title1": "Registros de eficiencia de combustible",
-    "title2": "Agregar un registro de eficiencia de combustible"
+  "pagenotfound": {
+    "title": "Página no encontrada",
+    "back-home": "Volver al inicio"
+  },
+  "toolbar": {
+    "trusted": "Transporte estudiantil confiable"
+  },
+
+  "option": {
+    "home": "Inicio",
+    "assignments": "Asignaciones"
+  },
+  "assignments": {
+    "title": "Asignar estudiante a bus",
+    "new": "Nueva asignación",
+    "studentId": "Id de estudiante",
+    "busId": "Id de bus",
+    "assign": "Asignar",
+    "required": "Ambos campos son obligatorios.",
+    "invalidStudent": "Id de estudiante inválido",
+    "invalidBus": "Bus inválido",
+    "alreadyAssigned": "Ya asignado",
+    "siblingBus": "Los hermanos deben estar asignados al mismo bus.",
+    "success": "Asignación registrada exitosamente.",
+    "error": "Ocurrió un error. Inténtalo de nuevo."
   }
 }
 ```
-
-**4** Generar carpeta firstudent=nombre y public de la app en src/app:
-
-crear carpetas:
-components {carpeta fuel-tank-type-efficiency, luego crear lo mismo que termina en .component .css, .html, .ts y .spec.ts}
-models {carpeta efficiency-record.entity luego mismo nombre en .ts y .spec.ts}
-service {efficiency-record.service.ts}
-
-**5** fuel-tank-type-efficiency:
-.css
+**9** components:
+public
+footer-content.component.vue
+2 naranjas
 ```
-mat-card {
-  margin: 16px;
-  max-width: 400px;
-  background-color: #A9A9A9;
+<script>
+export default {
+  name: "footer-content"
 }
+</script>
 
-mat-card-content {
-  padding: 16px;
-}
-
-.footer-content {
-  padding: 16px;
-  background-color: #5A5A5A;
-}
-
-p {
-  margin: 8px 0;
-}
-```
-```
-<mat-card appearance="outlined">
-  <mat-card-header>
-    <mat-card-title>{{ fuelTankType }}</mat-card-title>
-  </mat-card-header>
-
-  <mat-card-content>
-    <p><strong>Buses Count:</strong> {{ busesCount }}</p>
-    <p><strong>Average Km Per Gallon:</strong> {{ averageKmPerGallon }}</p>
-  </mat-card-content>
-
-  <mat-card-footer>
-    <div class="footer-content">
-      <p><strong>Reported Issues:</strong> {{ reportedIssues }}</p>
-      <p><strong>Last Report:</strong> {{ lastReport }}</p>
+<template>
+  <div class="grid bg-primary mt-4 p-2 align-content-start">
+    <div class="col-12 ml-3 align-items-center justify-content-center">
+      <p>{{ $t('footer.copyright') }}</p>
+      <p>{{ $t('footer.designer') }}</p>
     </div>
-  </mat-card-footer>
-</mat-card>
+  </div>
+</template>
+
+<style scoped>
+
+</style>
 ```
+language-switcher.component.vue
+1 amarillo 2 naranjas
 ```
-import { Component, Input, OnInit } from '@angular/core';
-import { EfficiencyRecordEntity } from '../../models/efficiency-record.entity/efficiency-record.entity';
-import { MatCardModule } from '@angular/material/card';
-import { CommonModule } from '@angular/common';
-
-@Component({
-  selector: 'app-fuel-tank-type-efficiency',
-  templateUrl: './fuel-tank-type-efficiency.component.html',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatCardModule
-  ],
-  styleUrls: ['./fuel-tank-type-efficiency.component.css']
-})
-export class FuelTankTypeEfficiencyComponent implements OnInit {
-  @Input() fuelTankType!: string;
-  @Input() efficiencyRecords: EfficiencyRecordEntity[] = [];
-  @Input() issues: any[] = [];
-
-  busesCount: number = 0;
-  averageKmPerGallon: string = '0.00';
-  reportedIssues: number = 0;
-  lastReport: string = 'No issues';
-
-  ngOnInit(): void {
-    this.calculateIndicators();
-  }
-
-  private calculateIndicators(): void {
-    const records = this.efficiencyRecords.filter(record => record.fuelTankType === this.fuelTankType);
-    this.busesCount = records.length;
-
-    const totalKmPerGallon = records.reduce((sum, record) => sum + record.averageKmPerGallon, 0);
-    this.averageKmPerGallon = (records.length > 0 ? (totalKmPerGallon / records.length).toFixed(2) : '0.00');
-
-    const relatedIssues = this.issues.filter(issue => {
-      const record = records.find(r => r.busId === issue.busId);
-      return !!record;
-    });
-    this.reportedIssues = relatedIssues.length;
-
-    if (relatedIssues.length > 0) {
-      const lastIssue = relatedIssues.reduce((latest, issue) =>
-        new Date(issue.registeredAt) > new Date(latest.registeredAt) ? issue : latest
-      );
-      this.lastReport = new Date(lastIssue.registeredAt).toLocaleString();
+<script>
+import {SelectButton as PvSelectButton} from "primevue";
+export default {
+  name: "language-switcher",
+  data() {
+    return {
+      languages: []
     }
-```
-**6** efficiency-record.entity:
-```
-export class EfficiencyRecordEntity {
-  id: number;
-  busId: number;
-  fuelTankType: string;
-  averageKmPerGallon: number;
-  calculatedAt: string;
+  },
+  created() {
+    this.languages = this.$i18n.availableLocales;
+  }
+}
+</script>
 
-  constructor(
-    record: {
-      id: number;
-      busId: number;
-      fuelTankType: string;
-      averageKmPerGallon: number;
-      calculatedAt: string;
+<template>
+  <pv-select-button v-model="$i18n.locale" :options="languages">
+    <template #option="slotProps">
+      {{ slotProps.option.toUpperCase()}}
+    </template>
+  </pv-select-button>
+</template>
+
+<style scoped>
+
+</style>
+```
+**9** pages:
+assignments.component.vue
+5 naranjas
+```
+<script>
+import { fetchAllData, createAssignment } from '../../firststudent/services/assignment.service.js';
+import { validateAssignment } from '../../firststudent/domain/assignment.domain.js';
+
+export default {
+  name: "assignments-component",
+  data() {
+    return {
+      studentId: '',
+      busId: '',
+      error: '',
+      success: '',
+      loading: false
     }
-  ) {
-    this.id = record.id;
-    this.busId = record.busId;
-    this.fuelTankType = record.fuelTankType;
-    this.averageKmPerGallon = record.averageKmPerGallon;
-    this.calculatedAt = record.calculatedAt;
+  },
+  methods: {
+    async assignStudent() {
+      this.error = '';
+      this.success = '';
+
+      if (
+        !this.studentId ||
+        !this.busId ||
+        isNaN(this.studentId) ||
+        isNaN(this.busId) ||
+        this.studentId < 1 ||
+        this.busId < 1
+      ) {
+        this.error = this.$t('assignments.required');
+        return;
+      }
+
+      this.loading = true;
+      try {
+        const { students, buses, assignments } = await fetchAllData();
+        if (!students.length) {
+          this.error = this.$t('assignments.error') + ' (No students found)';
+          this.loading = false;
+          return;
+        }
+        if (!buses.length) {
+          this.error = this.$t('assignments.error') + ' (No buses found)';
+          this.loading = false;
+          return;
+        }
+        const student = students.find(s => s.id === Number(this.studentId));
+        const bus = buses.find(b => b.id === Number(this.busId));
+        const errorKey = validateAssignment({ student, bus, assignments, students });
+        if (errorKey) {
+          this.error = this.$t(`assignments.${errorKey}`);
+          this.loading = false;
+          return;
+        }
+        try {
+          await createAssignment({ studentId: student.id, busId: bus.id });
+          this.success = this.$t('assignments.success');
+          this.studentId = '';
+          this.busId = '';
+        } catch (e) {
+          this.error = this.$t('assignments.error') + ' (Failed to create assignment)';
+        }
+      } catch (e) {
+        this.error = this.$t('assignments.error') + ' (API unreachable)';
+      }
+      this.loading = false;
+    }
   }
 }
-```
-**7** efficiency-record.service.ts:
+</script>
 
-```
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
-import { EfficiencyRecordEntity } from '../models/efficiency-record.entity/efficiency-record.entity';
+<template>
+  <div class="assignment-page">
+    <h1>{{ $t('assignments.title') }}</h1>
+    <section>
+      <h2>{{ $t('assignments.new') }}</h2>
+      <div class="assignment-card">
 
-interface Threshold {
-  id: number;
-  fuelTankType: string;
-  minAverage: number;
-  maxAverage: number;
-}
+        <form @submit.prevent="assignStudent" class="assignment-form">
+          <div class="form-group">
+            <label for="studentId">{{ $t('assignments.studentId') }}</label>
+            <input
+              id="studentId"
+              v-model.number="studentId"
+              type="number"
+              min="1"
+              :disabled="loading"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="busId">{{ $t('assignments.busId') }}</label>
+            <input
+              id="busId"
+              v-model.number="busId"
+              type="number"
+              min="1"
+              :disabled="loading"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <pv-button type="submit" :disabled="loading" class="assign-btn">
+            {{ $t('assignments.assign') }}
+          </pv-button>
+        </form>
 
-interface Issue {
-  id?: number;
-  busId: number;
-  issueType: string;
-  registeredAt: string;
-}
+        <div v-if="error" class="form-message error">{{ error }}</div>
+        <div v-if="success" class="form-message success">{{ success }}</div>
+      </div>
+    </section>
+  </div>
+</template>
 
-@Injectable({
-  providedIn: 'root'
-})
-export class EfficiencyRecordService {
-  private apiUrl = 'http://localhost:3000';
-
-  constructor(private http: HttpClient) {}
-
-  getEfficiencyRecords(): Observable<EfficiencyRecordEntity[]> {
-    return this.http.get<EfficiencyRecordEntity[]>(`${this.apiUrl}/efficiency-records`);
-  }
-
-
-  getThresholds(): Observable<Threshold[]> {
-    return this.http.get<Threshold[]>(`${this.apiUrl}/thresholds`);
-  }
-
-
-  addEfficiencyRecord(record: Omit<EfficiencyRecordEntity, 'id'>): Observable<EfficiencyRecordEntity> {
-    return this.http.post<EfficiencyRecordEntity>(`${this.apiUrl}/efficiency-records`, record);
-  }
-
-
-  addIssue(issue: Omit<Issue, 'id'>): Observable<Issue> {
-    return this.http.post<Issue>(`${this.apiUrl}/issues`, {
-      ...issue,
-      issueType: 'Fuel Tank Issue'
-    });
-  }
-
-
-  checkExistingIssueForToday(busId: number): Observable<boolean> {
-    return this.http.get<Issue[]>(`${this.apiUrl}/issues`).pipe(
-      map(issues => {
-        const today = new Date().toISOString().split('T')[0];
-        return issues.some(issue =>
-          issue.busId === busId &&
-          new Date(issue.registeredAt).toISOString().startsWith(today)
-        );
-      })
-    );
-  }
-  getIssues(): Observable<Issue[]> {
-    return this.http.get<Issue[]>(`${this.apiUrl}/issues`);
-  }
-}
-```
-**8** en public:
-crear carpetas:
-components {carpetas footer-component: mismo nombre .component .css, .html y .ts
-language-switcher: mismo nombre .component .css, .html y .ts}
-pages {carpetas fuel-efficiency: mismo nombre .component .css, .html y .ts
-home: mismo nombre .component .css, .html y .ts
-page-not-found: mismo nombre .component .css, .html y .ts
-}
-**9** footer-component:
-.css
-```
-.footer-content {
-  background: #23272a;
-  color: #b0b3b8;
-  border-top: 1px solid #222;
-  text-align: center;
-  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
-  padding: 16px 0 8px 0;
-  font-size: 1em;
-}
-```
-.html
-```
-<div class="footer-content">
-  <p>{{ 'footer.copyright' | translate }}</p>
-  <p>{{ 'footer.designer' | translate }}</p>
-</div>
-```
-.ts
-```
-import { Component } from '@angular/core';
-import {TranslatePipe} from '@ngx-translate/core';
-
-@Component({
-  selector: 'app-footer-component',
-  imports: [
-    TranslatePipe
-  ],
-  templateUrl: './footer-component.component.html',
-  styleUrl: './footer-component.component.css'
-})
-export class FooterComponentComponent {
-
-}
-```
-**10** language-switcher:
-.css
-```
-mat-button-toggle-group {
-  background: #23272a;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
-  border-radius: 6px;
-}
-
-mat-button-toggle {
-  color: #b0b3b8;
-  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
-}
-
-mat-button-toggle.mat-button-toggle-checked {
-  background: #1976d2 !important;
-  color: #fff !important;
-}
-
-mat-button-toggle:hover:not(.mat-button-toggle-checked) {
-  background: #181a1b !important;
-  color: #90caf9 !important;
-}
-```
-.html
-```
-<mat-button-toggle-group [value]="currentLang"
-                         appearance="standard"
-                         aria-label="Preferred language"
-                         name="language">
-  @for (language of languages; track language) {
-    <mat-button-toggle [value]="language"
-                       [aria-label]="language"
-                       (click)="useLanguage(language)">
-      {{ language.toUpperCase() }}
-    </mat-button-toggle>
-  }
-</mat-button-toggle-group>
-```
-.ts
-```
-import { Component } from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
-import {MatButtonToggle, MatButtonToggleGroup} from '@angular/material/button-toggle';
-
-@Component({
-  selector: 'app-language-switcher',
-  imports: [
-    MatButtonToggleGroup,
-    MatButtonToggle,
-  ],
-  templateUrl: './language-switcher.component.html',
-  styleUrl: './language-switcher.component.css'
-})
-export class LanguageSwitcherComponent {
-  protected currentLang: string = 'en';
-  protected languages: string[] = [ 'en', 'es' ]
-
-  constructor(private translate: TranslateService) {
-    this.currentLang = translate.currentLang;
-  }
-
-  useLanguage(language: string): void {
-    this.translate.use(language);
-    this.currentLang = language;
-  }
-}
-```
-**11** fuel-efficiency:
-.css
-```
-
-.container {
-  padding: 20px;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form-container {
+<style scoped>
+.assignment-page {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 20px;
+  align-items: center;
+  color: var(--primary-text);
 }
 
-mat-form-field {
+.assignment-card {
+  background: var(--secondary-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+  padding: 2em 2.5em 2em 2.5em;
+  margin-top: 1.5em;
+  min-width: 320px;
+  max-width: 400px;
   width: 100%;
 }
 
-button {
-  align-self: flex-start;
-}
-
-.message {
-  margin-top: 16px;
-  padding: 12px;
-  border-radius: 4px;
-}
-
-.error-message {
-  background-color: #ffebee;
-  color: #c62828;
-}
-
-.success-message {
-  background-color: #e8f5e9;
-  color: #2e7d32;
-}
-```
-.html
-```
-<div class="container">
-  <div class="header">
-    <h1>{{ 'fuel.title1' | translate }}</h1>
-  </div>
-
-  <h2>{{'fuel.title2' |translate}}</h2>
-
-  <form [formGroup]="recordForm" (ngSubmit)="onSubmit()" class="form-container">
-    <mat-form-field appearance="outline">
-      <mat-label>Bus Identifier</mat-label>
-      <input matInput type="number" formControlName="busId">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Fuel Tank Type</mat-label>
-      <mat-select formControlName="fuelTankType">
-        <mat-option *ngFor="let type of fuelTankTypes" [value]="type">
-          {{type}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-      <mat-label>Average Km per Gallon</mat-label>
-      <input matInput type="number" formControlName="averageKmPerGallon">
-    </mat-form-field>
-
-    <button mat-raised-button color="primary" type="submit">
-      Add Record
-    </button>
-  </form>
-
-  <div *ngIf="message" [class.error-message]="isError" [class.success-message]="!isError" class="message">
-    {{ message }}
-  </div>
-</div>
-```
-.ts
-```
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatButtonModule } from '@angular/material/button';
-import { EfficiencyRecordService } from '../../../firststudent/service/efficiency-record.service';
-import {TranslatePipe} from '@ngx-translate/core';
-import { MatOptionModule } from '@angular/material/core';
-
-@Component({
-  selector: 'app-fuel-efficiency',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatSelectModule,
-    MatButtonModule,
-    MatOptionModule,
-    TranslatePipe
-  ],
-  templateUrl: './fuel-efficiency.component.html',
-  styleUrls: ['./fuel-efficiency.component.css']
-})
-export class FuelEfficiencyComponent {
-  recordForm: FormGroup;
-  fuelTankTypes = ['Type A', 'Type B', 'Type C', 'Type D'];
-  message = '';
-  isError = false;
-
-  constructor(
-    private fb: FormBuilder,
-    private efficiencyService: EfficiencyRecordService
-  ) {
-    this.recordForm = this.fb.group({
-      busId: ['', [Validators.required, Validators.min(1)]],
-      fuelTankType: ['', Validators.required],
-      averageKmPerGallon: ['', [Validators.required, Validators.min(0)]]
-    });
-  }
-
-  onSubmit() {
-    if (this.recordForm.valid) {
-      const formValue = this.recordForm.value;
-
-      // Verificar el tipo de tanque y sus límites
-      this.efficiencyService.getThresholds().subscribe({
-        next: (thresholds) => {
-          const threshold = thresholds.find(t => t.fuelTankType === formValue.fuelTankType);
-
-          if (!threshold) {
-            this.showMessage('Invalid Fuel Tank Type', true);
-            return;
-          }
-
-          const record = {
-            ...formValue,
-            calculatedAt: new Date().toISOString()
-          };
-
-          // Verificar si está fuera de los límites
-          if (formValue.averageKmPerGallon < threshold.minAverage ||
-            formValue.averageKmPerGallon > threshold.maxAverage) {
-
-            // Verificar si ya existe un issue para este bus hoy
-            this.efficiencyService.checkExistingIssueForToday(formValue.busId).subscribe({
-              next: (exists) => {
-                if (!exists) {
-                  const issue = {
-                    busId: formValue.busId,
-                    issueType: "Fuel Tank Issue",
-                    registeredAt: new Date().toISOString()
-                  };
-                  this.efficiencyService.addIssue(issue).subscribe();
-                }
-              }
-            });
-          }
-
-          // Guardar el registro
-          this.efficiencyService.addEfficiencyRecord(record).subscribe({
-            next: () => {
-              this.showMessage('Record successfully created', false);
-              this.recordForm.reset();
-            },
-            error: () => this.showMessage('Error creating record', true)
-          });
-        },
-        error: () => this.showMessage('Error validating fuel tank type', true)
-      });
-    }
-  }
-
-  private showMessage(text: string, isError: boolean) {
-    this.message = text;
-    this.isError = isError;
-    setTimeout(() => {
-      this.message = '';
-    }, 3000);
-  }
-}
-```
-**12** home:
-.css
-```
-.container {
-  padding: 20px;
-}
-
-.content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-h1, h2 {
-  color: #333;
-  margin-bottom: 20px;
-}
-
-
-.content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-
-.header {
-  grid-column: 1 / -1;
-}
-
-h1, h2, p {
-  grid-column: 1 / -1;
-}
-.loading-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 200px;
-}
-```
-.html
-```
-<div class="container">
-  <div class="header">
-    <h1>{{ 'home.home' | translate }}</h1>
-    <p>{{ 'home.welcome' | translate}}</p>
-    <h2>{{ 'home.efficiency' |translate}}</h2>
-  </div>
-
-  <div *ngIf="isLoading" class="loading-container">
-    <mat-spinner diameter="40"></mat-spinner>
-  </div>
-
-  <div class="content" *ngIf="!isLoading">
-    <app-fuel-tank-type-efficiency
-      *ngFor="let fuelTankType of fuelTankTypes"
-      [fuelTankType]="fuelTankType"
-      [efficiencyRecords]="efficiencyRecords"
-      [issues]="issues">
-    </app-fuel-tank-type-efficiency>
-  </div>
-</div>
-```
-.ts
-```
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatCardModule } from '@angular/material/card';
-import { FuelTankTypeEfficiencyComponent } from '../../../firststudent/components/fuel-tank-type-efficiency/fuel-tank-type-efficiency.component';
-import { EfficiencyRecordService } from '../../../firststudent/service/efficiency-record.service';
-import { TranslatePipe } from '@ngx-translate/core';
-import { forkJoin } from 'rxjs';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {EfficiencyRecordEntity} from '../../../firststudent/models/efficiency-record.entity/efficiency-record.entity';
-
-@Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [
-    CommonModule,
-    MatCardModule,
-    FuelTankTypeEfficiencyComponent,
-    TranslatePipe,
-    MatProgressSpinnerModule
-  ],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
-})
-export class HomeComponent implements OnInit {
-   fuelTankTypes: string[] = ['Type A', 'Type B', 'Type C', 'Type D'];
-    efficiencyRecords: EfficiencyRecordEntity[] = [];
-     issues: any[] = [];
-     isLoading = true;
-
-  constructor(private efficiencyRecordService: EfficiencyRecordService) {}
-
-  ngOnInit(): void {
-    this.loadData();
-  }
-private loadData(): void {
-  forkJoin({
-    records: this.efficiencyRecordService.getEfficiencyRecords(),
-    issues: this.efficiencyRecordService.getIssues()
-  }).subscribe({
-    next: (data) => {
-      if (data.records && Array.isArray(data.records)) {
-        this.efficiencyRecords = data.records.map(record => new EfficiencyRecordEntity(record));
-      } else {
-        console.error('Invalid data format for efficiency records:', data.records);
-        this.efficiencyRecords = [];
-      }
-
-      if (data.issues && Array.isArray(data.issues)) {
-        this.issues = data.issues;
-      } else {
-        console.error('Invalid data format for issues:', data.issues);
-        this.issues = [];
-      }
-
-      this.isLoading = false;
-    },
-    error: (error) => {
-      console.error('Error loading data:', error);
-      this.isLoading = false;
-    }
-  });
-}
-```
-**13** page-not-found:
-.css
-```
-:host {
-  background: #181a1b;
-  color: #f5f5f5;
-  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
-  min-height: 100vh;
+.assignment-form {
   display: flex;
   flex-direction: column;
+  gap: 1.5em;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.assignment-form label {
+  color: var(--primary-text);
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+.assignment-form input {
+  background: var(--input-bg);
+  color: var(--primary-text);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  padding: 0.6em 0.8em;
+  font-size: 1em;
+  width: 100%;
+  transition: border 0.2s;
+}
+
+.assignment-form input:focus {
+  outline: 2px solid var(--accent);
+  border-color: var(--accent);
+}
+
+.assign-btn {
+  margin-top: 0.5em;
+  width: 100%;
+  background: var(--button-bg);
+  color: var(--primary-text);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1em;
+  padding: 0.7em 0;
+  transition: background 0.2s, border 0.2s;
+}
+
+.assign-btn:hover {
+  background: var(--button-hover);
+  border-color: var(--accent);
+}
+
+.form-message {
+  margin-top: 1.2em;
+  padding: 0.8em 1em;
+  border-radius: 6px;
+  font-size: 1em;
+  text-align: center;
+}
+
+.form-message.error {
+  background: #2d1a1a;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+}
+
+.form-message.success {
+  background: #1a2d1a;
+  color: #51ff8a;
+  border: 1px solid #51ff8a;
+}
+</style>
+```
+home.component.vue
+8 naranjas
+```
+<script>
+import { fetchBusesWithAvailableSeats } from '../../firststudent/services/bus.service.js';
+
+export default {
+  name: "home-component",
+  data() {
+    return {
+      buses: [],
+      loading: false,
+      first: 0,
+      rows: 5,
+      sortField: null,
+      sortOrder: null,
+      error: ''
+    }
+  },
+  async created() {
+    this.loading = true;
+    try {
+      this.buses = await fetchBusesWithAvailableSeats();
+    } catch (e) {
+      this.error = this.$t('assignments.error') + ' (API unreachable)';
+    }
+    this.loading = false;
+  },
+  computed: {
+    pagedBuses() {
+      let sorted = [...this.buses];
+      if (this.sortField) {
+        sorted.sort((a, b) => {
+          const valA = a[this.sortField];
+          const valB = b[this.sortField];
+          if (valA < valB) return this.sortOrder === 1 ? -1 : 1;
+          if (valA > valB) return this.sortOrder === 1 ? 1 : -1;
+          return 0;
+        });
+      }
+      return sorted.slice(this.first, this.first + this.rows);
+    }
+  },
+  methods: {
+    onPage(event) {
+      this.first = event.first;
+      this.rows = event.rows;
+    },
+    onSort(event) {
+      this.sortField = event.sortField;
+      this.sortOrder = event.sortOrder;
+    }
+  }
+}
+</script>
+
+<template>
+  <div>
+    <h1>{{ $t('option.home') }}</h1>
+    <p>{{ $t('home.welcome') }}</p>
+    <section>
+      <h2>{{ $t('home.buses') }}</h2>
+      <div v-if="error" class="form-message error">{{ error }}</div>
+      <pv-data-table
+          v-else
+          :value="pagedBuses"
+          :paginator="true"
+          :rows="rows"
+          :totalRecords="buses.length"
+          :loading="loading"
+          :first="first"
+          @page="onPage"
+          :sortField="sortField"
+          :sortOrder="sortOrder"
+          @sort="onSort"
+          dataKey="id"
+      >
+        <pv-column field="vehiclePlate" :header="$t('home.plate')" sortable></pv-column>
+        <pv-column field="fuelTankType" :header="$t('home.fuelTank')" sortable></pv-column>
+        <pv-column field="totalSeats" :header="$t('home.totalSeats')" sortable></pv-column>
+        <pv-column field="occupiedSeats" :header="$t('home.occupiedSeats')" sortable></pv-column>
+        <pv-column field="availableSeats" :header="$t('home.availableSeats')" sortable></pv-column>
+      </pv-data-table>
+    </section>
+  </div>
+</template>
+
+<style scoped>
+section {
+  margin-top: 2rem;
+}
+.form-message.error {
+  background: #2d1a1a;
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+  margin-top: 1.2em;
+  padding: 0.8em 1em;
+  border-radius: 6px;
+  font-size: 1em;
+  text-align: center;
+}
+</style>
+```
+page-not-found.component.vue
+2 naranjas
+```
+<script>
+export default {
+  name: "page-not-found",
+  data() {
+    return {
+      unavailableRoute: null,
+    }
+  },
+  created() {
+    this.unavailableRoute = this.$route.path;
+  }
+}
+
+
+</script>
+
+<template>
+  <div class="w-full">
+
+    <h1>{{$t('pagenotfound.title')}}</h1>
+
+    <p>The path <b>{{ unavailableRoute }}</b> is not available.</p>
+
+    <router-link to="/home">{{$t('pagenotfound.back-home')}}</router-link>
+  </div>
+</template>
+
+<style scoped>
+
+</style>
+```
+**9** router:
+index.js
+```
+import HomeComponent from "../public/pages/home.component.vue";
+const PageNotFoundComponent = () => import('../public/pages/page-not-found.component.vue');
+import AssignmentsComponent from "../public/pages/assignments.component.vue";
+
+import {createRouter, createWebHistory} from "vue-router";
+
+const routes = [
+  { path: '/home', name: 'home', component: HomeComponent, meta: { title: 'Home' } },
+  { path: '/transportation/assignments/new', name: 'assignments-new', component: AssignmentsComponent, meta: { title: 'Assignments' } },
+  { path: '/', name: 'default', redirect: '/home' },
+  { path: '/:pathMatch(.*)*', name: 'not-found', component: PageNotFoundComponent, meta: { title: 'Page not found' } },
+];
+
+const router = createRouter({
+    history: createWebHistory(import.meta.BASE_URL),
+    routes: routes,
+});
+
+router.beforeEach((to, from, next) => {
+    let baseTitle = 'FIRSTstudent';
+    document.title = `${baseTitle} | ${to.meta['title']}`;
+    next();
+});
+
+export default router;
+```
+**10** app.vue:
+4 naranjas
+```
+<script>
+import LanguageSwitcher from "./public/components/language-switcher.component.vue";
+import FooterContent from "./public/components/footer-content.component.vue";
+export default {
+  name: 'app',
+  components: {FooterContent, LanguageSwitcher},
+  data() {
+    return {
+      drawer: false,
+      items: [
+        { label: 'option.home', to: '/home' },
+        { label: 'option.assignments', to: '/transportation/assignments/new' }
+      ]
+    }
+  },
+  methods: {
+    toggleDrawer() {
+      this.drawer = !this.drawer;
+    }
+  }
+}
+</script>
+
+<template>
+  <pv-toast/>
+  <pv-confirm-dialog/>
+  <header>
+    <pv-toolbar class="bg-primary">
+      <template #start>
+        <div class="toolbar-left" style="display: flex; align-items: center;">
+          <button
+              class="hamburger"
+              :class="{ open: drawer }"
+              @click="toggleDrawer"
+              aria-label="Menu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+          <img
+              src="https://logo.clearbit.com/firststudentinc.com"
+              alt="FIRSTstudent Logo"
+              style="height: 40px; margin-right: 1rem;"
+          />
+          <span style="font-weight: 500; font-size: 1.1rem;">{{ $t('toolbar.trusted') }}</span>
+        </div>
+      </template>
+      <template #center>
+        <div class="flex-column nav-links">
+          <pv-button v-for="item in items" :key="item.label" as-child v-slot="slotProps">
+            <router-link :to="item.to" :class="slotProps['class']">{{ $t(item.label)}}</router-link>
+          </pv-button>
+        </div>
+      </template>
+      <template #end>
+        <language-switcher/>
+      </template>
+    </pv-toolbar>
+    <pv-drawer v-model:visible="drawer" position="left">
+      <nav class="drawer-links">
+        <pv-button
+            v-for="item in items"
+            :key="item.label"
+            as-child
+            class="drawer-link-btn"
+            :class="{ active: $route.path === item.to }"
+            @click="drawer = false"
+        >
+          <router-link :to="item.to" class="drawer-link-content">
+            <i :class="item.icon" class="drawer-link-icon"></i>
+            <span>{{ $t(item.label) }}</span>
+          </router-link>
+        </pv-button>
+      </nav>
+    </pv-drawer>
+
+  </header>
+  <main>
+    <router-view/>
+  </main>
+  <footer>
+    <footer-content/>
+  </footer>
+</template>
+
+<style scoped>
+.hamburger {
+  display: none;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-
-h1 {
-  color: #90caf9;
-}
-
-button[mat-button] {
-  background: #23272a;
-  color: #90caf9;
-  border: 1px solid #1976d2;
-  border-radius: 4px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  margin-right: 1rem;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
   transition: background 0.2s;
 }
-
-button[mat-button]:hover {
-  background: #1976d2;
-  color: #fff;
-}
-```
-.html
-```
-<h1>Page not found</h1>
-<p>The path <b>{{ invalidPath }}</b> is not valid.</p>
-
-
-<button mat-button (click)="onNavigateHome()">Home</button>
-```
-3 ama y 1 rojo
-.ts
-```
-import {Component, inject, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {MatButton} from '@angular/material/button';
-
-@Component({
-  selector: 'app-page-not-found',
-  imports: [
-    MatButton
-  ],
-  templateUrl: './page-not-found.component.html',
-  styleUrl: './page-not-found.component.css'
-})
-export class PageNotFoundComponent {
-  /*logian para regrear a home*/
-  protected invalidPath: string = '';
-  private route: ActivatedRoute = inject(ActivatedRoute);
-  private router: Router = inject(Router);
-
-  ngOnInit(): void {
-    this.invalidPath = this.route.snapshot.url.map(urlSegment => urlSegment.path).join('/');
-  }
-
-  protected onNavigateHome(): void {
-    this.router.navigate(['home']).then();
-  }
-}
-```
-**14** app.component.css:
-```
-:host {
-  background: #181a1b;
-  color: #f5f5f5;
-  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
-  min-height: 100vh;
+.hamburger span {
   display: block;
+  height: 4px;
+  width: 24px;
+  background: var(--primary-text);
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+@media (max-width: 700px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
 }
 
-a[mat-button] {
-  color: #90caf9;
-  transition: background 0.2s, color 0.2s;
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 2rem 1.5rem;
+  min-width: 200px;
+  background: var(--secondary-bg);
+  height: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
-
-a[mat-button]:hover {
-  background: #23272a;
-  color: #fff;
+.drawer-link-btn {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  color: var(--primary-text);
+  font-size: 1.13rem;
+  font-weight: 600;
+  padding: 0;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
-
-mat-toolbar {
-  background: #23272a !important;
-  color: #f5f5f5 !important;
-}
-
-.mat-spacer {
-  flex: 1 1 auto;
-}
-
-.logo-container {
+.drawer-link-btn .drawer-link-content {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 0.9em;
+  width: 100%;
+  padding: 0.85em 0.7em;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s, color 0.2s;
+}
+.drawer-link-btn .drawer-link-icon {
+  font-size: 1.3em;
+  color: var(--accent);
+}
+.drawer-link-btn:hover .drawer-link-content,
+.drawer-link-btn:focus .drawer-link-content {
+  background: var(--button-hover);
+  color: var(--accent);
+  box-shadow: 0 2px 8px rgba(100,108,255,0.08);
+}
+.drawer-link-btn.active .drawer-link-content {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(100,108,255,0.15);
+}
+.drawer-link-btn.active .drawer-link-icon {
+  color: #fff;
+}
+</style>
+```
+**11** i18n.js:
+```
+import en from './locales/en.json';
+import es from './locales/es.json';
+import {createI18n} from "vue-i18n";
+
+const i18n = createI18n({
+    locale: 'en',
+    fallbackLocale: 'en',
+    globalInjection: true,
+    messages: { en, es }
+});
+
+export default i18n;
+```
+**12** main.js:
+1 naranja
+```
+import { createApp } from 'vue'
+import './style.css'
+import App from './App.vue'
+
+import {PrimeVue} from '@primevue/core';
+import 'primeflex/primeflex.css';
+import 'primeicons/primeicons.css';
+import Material from '@primeuix/themes/material';
+import {
+    Button,
+    Card,
+    Checkbox,
+    Column, ConfirmationService,
+    ConfirmDialog,
+    DataTable,
+    Dialog, DialogService, Drawer,
+    FileUpload, FloatLabel, IconField, InputIcon, InputNumber, InputText, Menu, Rating, Row,
+    Select,
+    SelectButton, Tag, Textarea, Toast, ToastService, Toolbar
+} from "primevue";
+import i18n from "./i18n.js";
+import router from "./router/index.js";
+
+createApp(App)
+    .use(i18n)
+    .use(router)
+    .use(PrimeVue, { theme: { preset: Material}, ripple: true})
+    .use(ConfirmationService)
+    .use(DialogService)
+    .use(ToastService)
+    .component('pv-button', Button)
+    .component('pv-card', Card)
+    .component('pv-column', Column)
+    .component('pv-confirm-dialog', ConfirmDialog)
+    .component('pv-checkbox', Checkbox)
+    .component('pv-data-table', DataTable)
+    .component('pv-dialog', Dialog)
+    .component('pv-select', Select)
+    .component('pv-select-button', SelectButton)
+    .component('pv-file-upload', FileUpload)
+    .component('pv-float-label', FloatLabel)
+    .component('pv-icon-field', IconField)
+    .component('pv-input-icon', InputIcon)
+    .component('pv-input-text', InputText)
+    .component('pv-input-number', InputNumber)
+    .component('pv-menu', Menu)
+    .component('pv-rating', Rating)
+    .component('pv-row', Row)
+    .component('pv-drawer', Drawer)
+    .component('pv-tag', Tag)
+    .component('pv-textarea', Textarea)
+    .component('pv-toolbar', Toolbar)
+    .component('pv-toast', Toast)
+    .mount('#app')
+```
+**13** style.css:
+```
+:root {
+  --primary-bg: #181a20;
+  --secondary-bg: #23272f;
+  --primary-text: #f5f6fa;
+  --secondary-text: #b0b3b8;
+  --accent: #646cff;
+  --button-bg: #23272f;
+  --button-hover: #353945;
+  --input-bg: #23272f;
+  --input-border: #353945;
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: dark;
+  color: var(--primary-text);
+  background-color: var(--primary-bg);
 }
 
-.logo {
-  height: 40px;
-  width: auto;
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--primary-bg);
+  color: var(--primary-text);
 }
 
-.mat-spacer {
-  flex: 1 1 auto;
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: var(--secondary-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
 }
-```
-2 amarillos
-**15** app.component.html:
-```
-<mat-toolbar color="primary">
 
-  <mat-toolbar-row>
+a {
+  color: var(--accent);
+}
+a:hover {
+  color: #8a8cff;
+}
 
-    <div class="logo-container">
-      <img src="https://logo.clearbit.com/firststudentinc.com" alt="FIRSTstudent Logo" class="logo">
-      <span style="font-weight:bold; font-size:1.3em;">HALO Maintenance</span>
-    </div>
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-text);
+}
 
-    <span class="mat-spacer"></span>
+button, .pv-button {
+  background: var(--button-bg);
+  color: var(--primary-text);
+  border: 1px solid var(--input-border);
+}
+button:hover, .pv-button:hover {
+  background: var(--button-hover);
+  border-color: var(--accent);
+}
 
+input, .assignment-form input, .pv-input-text {
+  background: var(--input-bg);
+  color: var(--primary-text);
+  border: 1px solid var(--input-border);
+}
+input:focus, .assignment-form input:focus, .pv-input-text:focus {
+  outline: 2px solid var(--accent);
+}
 
-    <a mat-button [routerLink]="'/home'">{{ 'toolbar.home' | translate }}</a>
+.card, .pv-card {
+  background: var(--secondary-bg);
+  color: var(--primary-text);
+  border-radius: 8px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.3);
+}
 
-    <a mat-button [routerLink]="'/fuelefficiency'">fuel efficiency</a>
+footer, header, .pv-toolbar, .pv-drawer {
+  background: var(--secondary-bg) !important;
+  color: var(--primary-text) !important;
+}
 
-    <app-language-switcher></app-language-switcher>
-
-  </mat-toolbar-row>
-
-</mat-toolbar>
-
-<router-outlet></router-outlet>
-
-<app-footer-component></app-footer-component>
-```
-2 rojos 1 amarillo
-**16** app.component.ts:
-```
-import { Component } from '@angular/core';
-import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
-import {TranslatePipe, TranslateService} from '@ngx-translate/core';
-import {FooterComponentComponent} from './public/components/footer-component/footer-component.component';
-import {LanguageSwitcherComponent} from './public/components/language-switcher/language-switcher.component';
-import {MatToolbar, MatToolbarRow} from '@angular/material/toolbar';
-import {MatAnchor} from '@angular/material/button';
-
-@Component({
-  selector: 'app-root',
-  imports: [RouterOutlet, MatToolbar,
-    MatToolbarRow, MatAnchor, RouterLink, RouterLinkActive, TranslatePipe,
-    LanguageSwitcherComponent, FooterComponentComponent, TranslatePipe],
-
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
-})
-export class AppComponent {
-  title = 'ea4328u202317584';
-  options = [
-    { link: '/home', label: 'home'},
-    //store/ se puede quitar
-
-    { link: '/fuelefficiency', label: 'fuelefficiency'},
-  ]
-
-  constructor(private translate: TranslateService) {
-    this.translate.setDefaultLang('en');
-    this.translate.use('en');
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: dark;
+    color: var(--primary-text);
+    background-color: var(--primary-bg);
   }
 }
-```
-**17** app.config.ts:
-```
-import {ApplicationConfig, importProvidersFrom, provideZoneChangeDetection} from '@angular/core';
-import { provideRouter } from '@angular/router';
-import { routes } from './app.routes';
-import {HttpClient, provideHttpClient} from '@angular/common/http';
-import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-
-export const HttpLoaderFactory = (http: HttpClient) =>
-  new TranslateHttpLoader(http);
-// toda cambiar
-
-export const appConfig: ApplicationConfig = {
-  providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
-    provideRouter(routes),
-    provideHttpClient(),
-    importProvidersFrom(TranslateModule.forRoot({
-      loader: { provide: TranslateLoader, useFactory: HttpLoaderFactory, deps: [HttpClient]}
-    }))
-  ]
-
-};
-```
-**18** app.routes.ts:
-```
-import { Routes } from '@angular/router';
-import  {HomeComponent} from './public/pages/home/home.component';
-
-const fuelefficiencyComponent =
-  ()=> import('./public/pages/fuel-efficiency/fuel-efficiency.component')
-    .then(m => m.FuelEfficiencyComponent);
-
-const PageNotFoundComponent =
-  () => import('./public/pages/page-not-found/page-not-found.component')
-    .then(m => m.PageNotFoundComponent);
-
-export const routes: Routes = [
-  { path: 'home',     component:      HomeComponent },
-
-  //{ path: 'bundles',  loadComponent:  BundlesComponent },
-  { path: 'fuelefficiency',  loadComponent:  fuelefficiencyComponent },
-  { path: '',       redirectTo:     'home', pathMatch: 'full' },
-  { path: '**',     loadComponent: PageNotFoundComponent }
-
-];
 ```
 revisar y agregar los componentes q faltan en las carpetas antes de iniciar
 
