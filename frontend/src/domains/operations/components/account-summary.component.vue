@@ -45,24 +45,23 @@ export default {
   }
 }
 </script>
-
 <style scoped>
 .account-card {
-  border: 1px solid #ddd;
+  border: 1px solid #cbd5e0; 
   border-radius: 10px;
   padding: 1rem;
-  background-color: #f9f9f9;
+  background-color: #f7fafc;
   transition: box-shadow 0.3s ease;
 }
 
 .account-card:hover {
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 12px rgba(66, 153, 225, 0.3);
 }
 
 .card-header {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #2c3e50;
+  color: #2a4365;
   margin-bottom: 0.5rem;
 }
 
@@ -73,20 +72,20 @@ export default {
 .account-number {
   font-size: 1rem;
   font-weight: bold;
-  color: #34495e;
+  color: #2c5282;
   margin: 0.25rem 0;
 }
 
 .balance {
   font-size: 1.1rem;
-  color: #27ae60;
+  color: #3182ce;
   font-weight: bold;
 }
 
 .card-footer {
   font-size: 0.95rem;
-  color: #555;
-  border-top: 1px solid #ccc;
+  color: #4a5568;
+  border-top: 1px solid #e2e8f0;
   padding-top: 0.5rem;
 }
 </style>
