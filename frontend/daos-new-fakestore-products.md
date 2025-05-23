@@ -1594,7 +1594,36 @@ json-server --watch server/db.json --routes server/routes.json
 ```
 
 
+# FIRSTstudent - Student Transportation Management Application
 
+FIRSTstudent, North America's largest school transportation provider, is developing a web frontend for its HALO maintenance platform to manage student-to-bus assignments. Built with Vue 3 and PrimeVue, this application integrates with a simulated backend (via json-server) to streamline bus fleet management and student assignments. It ensures district alignment, seat availability tracking, and multilingual support (English/Spanish).
+
+## 📋 Overview
+
+The application provides functionalities to:
+
+- Manage student-to-bus assignments with district validation and seat availability tracking.
+- View real-time bus data, including fuel type, capacity, and dynamically calculated available seats.
+- Submit and validate assignments to ensure students are assigned to buses within the same district.
+- Handle errors for invalid IDs, mismatched districts, or duplicate assignments.
+- Navigate seamlessly with a multilingual interface (English/Spanish).
+
+Built with a **domain-driven component architecture**, it´s structured into business domains (`public`, `operations`, `shared`) to ensure scalability and maintainability.
+
+## 🚀 Features
+
+- ✅ **Bus Overview**: Displays a read-only table with bus details: Vehicle Plate, Fuel Type, District ID, Total Capacity.
+- 🔁 **Assignment Management**: New Assignment Form: Validates studentId and busId to ensure matching districtId between student and bus.
+- 🌐 **Multilingual Support**: Supports multilingual interfaces (English/Spanish) via Vue I18n.
+- 🧱 **Component-Based UI**: Modular UI built with PrimeVue and PrimeFlex for consistency.
+- 🔍 **Validation Feedback**: Alerts for invalid or duplicate transaction IDs.
+- 📦 **Fake API Integration**: Simulated backend (`db.json`) for testing transactions and accounts.
+- 💡 **Responsive Design**: Optimized for accessibility across devices.
+
+
+👤 Author
+Mathias Joaquin Aspajo Alvarez
+University Code: u202317584
 
 
 
