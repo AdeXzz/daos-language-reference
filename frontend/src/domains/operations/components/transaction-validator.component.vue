@@ -69,12 +69,11 @@ export default {
   }
 }
 </script>
-
 <style scoped>
 .transaction-validator-container {
   padding: 1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #2c3e50;
+  color: #1e3a34; 
 }
 
 .transaction-validator-title {
@@ -92,20 +91,20 @@ export default {
   width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #a0aec0; 
   border-radius: 6px;
   box-sizing: border-box;
   transition: border-color 0.3s ease;
 }
 
 .transaction-validator-input:focus {
-  border-color: #3182ce;
+  border-color: #38a169; 
   outline: none;
-  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.3);
+  box-shadow: 0 0 0 2px rgba(56, 161, 105, 0.3);
 }
 
 .transaction-validator-button {
-  background-color: #3182ce;
+  background-color: #38a169; 
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -119,19 +118,19 @@ export default {
 }
 
 .transaction-validator-button:hover {
-  background-color: #2c5282;
+  background-color: #2f855a; 
   transition: background-color 0.3s ease;
 }
 
 .transaction-validator-message {
-  color: #e53e3e; /* rojo para errores */
+  color: #e53e3e; 
   margin-top: 0.5rem;
 }
 
 .transaction-validator-data {
   margin-top: 1rem;
-  border: 1px solid #ddd;
-  background-color: #f7fafc;
+  border: 1px solid #cbd5e0; 
+  background-color: #f0fff4; 
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
@@ -143,6 +142,6 @@ export default {
 }
 
 .transaction-validator-data strong {
-  color: #2c3e50;
+  color: #22543d; 
 }
 </style>
