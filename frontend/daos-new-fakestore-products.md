@@ -1586,6 +1586,7 @@ footer, header, .pv-toolbar, .pv-drawer {
   }
 }
 ```
+
 revisar y agregar los componentes q faltan en las carpetas antes de iniciar
 
 ```
