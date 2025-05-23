@@ -1028,7 +1028,9 @@ export const routes: Routes = [
 ```
 revisar y agregar los componentes q faltan en las carpetas antes de iniciar
 
-
+```
+json-server --watch server/db.json --routes server/routes.json
+```
 
 
 
